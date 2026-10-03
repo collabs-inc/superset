@@ -2447,6 +2447,9 @@ msgstr "変更を依頼"
 msgid "Ask to make changes, @mention files, run /commands"
 msgstr "変更を依頼、@でファイルをメンション、/でコマンドを実行"
 
+msgid "Ask what your agents are up to, or tell one what to do next."
+msgstr "エージェントの様子を聞いたり、次にやることを指示したりできます。"
+
 msgid "Aspect Ratio"
 msgstr "Aspect Ratio"
 
@@ -3403,6 +3406,12 @@ msgstr "ホストを確認中…"
 
 msgid "Checking out a PR requires a project"
 msgstr "PRのチェックアウトにはプロジェクトが必要です"
+
+msgid "Checking pull requests in {what}"
+msgstr "{what} のプルリクエストを確認中"
+
+msgid "Checking workspaces"
+msgstr "ワークスペースを確認中"
 
 msgid "Checking..."
 msgstr "確認中..."
@@ -4952,6 +4961,9 @@ msgstr "クラウドワークスペースを開始できませんでした"
 msgid "Couldn't start design mode on this page"
 msgstr "このページでデザインモードを開始できませんでした"
 
+msgid "Couldn't start voice mode"
+msgstr "音声モードを開始できませんでした"
+
 msgid "Couldn't start workspace"
 msgstr "ワークスペースを開始できませんでした"
 
@@ -5921,6 +5933,9 @@ msgstr "ドキュメント"
 msgid "Documentation"
 msgstr "ドキュメント"
 
+msgid "Doing it"
+msgstr "実行中"
+
 msgid "Don't ask again"
 msgstr "今後確認しない"
 
@@ -6281,6 +6296,12 @@ msgstr "リモートアクセスを有効にし、Supersetを起動したまま�
 msgid "Enable skill"
 msgstr "スキルを有効にする"
 
+msgid "End voice session"
+msgstr "音声セッションを終了"
+
+msgid "Ended"
+msgstr "終了しました"
+
 msgid "Engineering deep-dives and launches."
 msgstr "技術の深掘りとリリース情報。"
 
@@ -6474,6 +6495,9 @@ msgstr "プロジェクトを展開"
 
 msgid "Expand thread"
 msgstr "スレッドを展開"
+
+msgid "Expand voice"
+msgstr "音声を展開"
 
 msgid "Expand workspace"
 msgstr "ワークスペースを展開"
@@ -7314,11 +7338,20 @@ msgstr "フォルダ表示"
 msgid "Folders to check out into new worktrees, one per line, relative to the repo root. Files at the root are always included. Empty checks out everything."
 msgstr "新しいワークツリーにチェックアウトするフォルダを、リポジトリルートからの相対パスで1行に1つずつ。ルートのファイルは常に含まれます。空欄ですべてをチェックアウトします。"
 
+msgid "Follow"
+msgstr "追従"
+
+msgid "Follow mode"
+msgstr "追従モード"
+
 msgid "FOLLOW ON X"
 msgstr "Xでフォロー"
 
 msgid "Follow terminal sessions live"
 msgstr "ターミナルセッションをリアルタイムで確認"
+
+msgid "Follow the conversation"
+msgstr "会話に追従する"
 
 msgid "FOLLOW US"
 msgstr "フォローする"
@@ -8383,6 +8416,9 @@ msgstr "内部"
 msgid "Internet Disconnected"
 msgstr "インターネットが切断されています"
 
+msgid "Interrupt"
+msgstr "中断"
+
 msgid "Interrupted"
 msgstr "中断されました"
 
@@ -9014,6 +9050,9 @@ msgstr "ホスト上のワークスペースの一覧、作成、更新、削除
 msgid "List, get, create, update, and delete tasks; track status."
 msgstr "タスクの一覧、取得、作成、更新、削除と、ステータスの追跡ができます。"
 
+msgid "Listening"
+msgstr "聞き取り中"
+
 msgid "Listening agents"
 msgstr "コメントを受け取るエージェント"
 
@@ -9022,6 +9061,9 @@ msgstr "チャンネルメッセージと新しいチャンネルを待ち受け
 
 msgid "Listening status unavailable"
 msgstr "コメント受信状態を確認できません"
+
+msgid "Listing sessions in {what}"
+msgstr "{what} のセッションを一覧中"
 
 msgid "live"
 msgstr "ライブ"
@@ -9218,11 +9260,20 @@ msgstr "長時間にわたる信頼性がしきい値を超えます。18時に�
 msgid "Long-hover shortcut-only tooltip; its chip style is now the TooltipContent default"
 msgstr "長めのホバーでショートカットだけを出すtooltip。そのチップスタイルが現在のTooltipContentのデフォルトです"
 
+msgid "Looking at {what}"
+msgstr "{what} を確認中"
+
 msgid "Looking for a mobile simulator…"
 msgstr "モバイルシミュレーターを検索中…"
 
 msgid "Looking for installed browsers…"
 msgstr "インストール済みブラウザを検索中…"
+
+msgid "Looking for pages"
+msgstr "ページを検索中"
+
+msgid "Looking up a workspace"
+msgstr "ワークスペースを検索中"
 
 msgid "Looks good"
 msgstr "良さそう"
@@ -9549,6 +9600,9 @@ msgstr "最小化"
 msgid "Minimize GitHub issues"
 msgstr "GitHub issueを最小化"
 
+msgid "Minimize voice"
+msgstr "音声を最小化"
+
 msgid "Minimum contrast"
 msgstr "最小コントラスト"
 
@@ -9744,8 +9798,14 @@ msgstr "複数のプロジェクトがこのリポジトリ({0})を使用して�
 msgid "Multiple projects use this repository ({0}). Open the project you want from settings to set it up on this device."
 msgstr "複数のプロジェクトがこのリポジトリ({0})を使用しています。このデバイスでセットアップするには、設定から目的のプロジェクトを開いてください。"
 
+msgid "Mute"
+msgstr "ミュート"
+
 msgid "Mute notifications"
 msgstr "通知をミュート"
+
+msgid "Muted"
+msgstr "ミュート中"
 
 msgid "My Agent"
 msgstr "マイエージェント"
@@ -9858,6 +9918,9 @@ msgstr "ネットワークが変更されました"
 
 msgid "Never"
 msgstr "未使用"
+
+msgid "Never mind"
+msgstr "取り消しました"
 
 msgctxt "badge on a page published since the menu was last opened"
 msgid "New"
@@ -11408,6 +11471,9 @@ msgstr "オープン"
 msgid "opened PR #841 for review"
 msgstr "レビュー用にPR #841を作成"
 
+msgid "Opening {what}"
+msgstr "{what} を開いています"
+
 msgid "Opening files"
 msgstr "ファイルを開く"
 
@@ -11455,6 +11521,9 @@ msgstr "オプション"
 
 msgid "Or ask your coding agent to install the Superset CLI."
 msgstr "または、お使いのコーディングエージェントにSuperset CLIのインストールを頼んでください。"
+
+msgid "or just say yes"
+msgstr "または「はい」と言うだけでも"
 
 msgid "Orange"
 msgstr "オレンジ"
@@ -12113,6 +12182,12 @@ msgstr "プレフィックス"
 msgid "Preparing"
 msgstr "準備中"
 
+msgid "Preparing a message for {what}"
+msgstr "{what} へのメッセージを準備中"
+
+msgid "Preparing to restart {what}"
+msgstr "{what} の再起動を準備中"
+
 msgid "Preserve commit history"
 msgstr "コミット履歴を保持"
 
@@ -12610,6 +12685,9 @@ msgstr "並列コーディングエージェントのガイドを読む"
 msgid "Read the setup guide"
 msgstr "セットアップガイドを読む"
 
+msgid "Reading {what}"
+msgstr "{what} を読み取り中"
+
 msgid "Reading usage…"
 msgstr "使用量を取得中…"
 
@@ -12706,6 +12784,9 @@ msgstr "再接続中"
 
 msgid "Reconnecting…"
 msgstr "再接続中…"
+
+msgid "Reconnecting… your conversation is kept."
+msgstr "再接続中… 会話は保持されます。"
 
 msgid "Red"
 msgstr "赤"
@@ -13214,6 +13295,9 @@ msgstr "レスポンス"
 
 msgid "Restart"
 msgstr "再起動"
+
+msgid "Restart {target}"
+msgstr "{target} を再起動"
 
 msgid "Restart all terminals?"
 msgstr "すべてのターミナルを再起動しますか?"
@@ -14212,6 +14296,9 @@ msgstr "レビューを送信"
 msgid "Send to"
 msgstr "送信先"
 
+msgid "Send to {target}"
+msgstr "{target} に送信"
+
 msgid "Send to agent"
 msgstr "エージェントに送信"
 
@@ -14929,6 +15016,9 @@ msgstr "スパムまたは詐欺"
 msgid "Sparse checkout"
 msgstr "スパースチェックアウト"
 
+msgid "Speaking"
+msgstr "話し中"
+
 msgid "Specific"
 msgstr "指定のみ"
 
@@ -15137,6 +15227,9 @@ msgstr "タブバーの+から開始できます。"
 
 msgid "Start or stop the workspace run command"
 msgstr "ワークスペースの実行コマンドを開始または停止する"
+
+msgid "Start voice mode"
+msgstr "音声モードを開始"
 
 msgid "Start with the work."
 msgstr "仕事から始める。"
@@ -17146,6 +17239,9 @@ msgstr "ユーザー数無制限"
 msgid "Unlink task"
 msgstr "タスクのリンクを解除"
 
+msgid "Unmute"
+msgstr "ミュート解除"
+
 msgid "Unmute notifications"
 msgstr "通知のミュートを解除"
 
@@ -17591,6 +17687,9 @@ msgstr "訪問者からダウンロード、アカウントへ"
 msgid "Visitors whose session began on a link an assistant gave them. This is the number an AEO effort should move."
 msgstr "アシスタントが示したリンクからセッションを開始した訪問者。AEO の取り組みが動かすべき数字です。"
 
+msgid "Voice"
+msgstr "音声"
+
 msgid "Volume"
 msgstr "音量"
 
@@ -17622,6 +17721,9 @@ msgstr "サブエージェントの最初のメッセージを待っています
 
 msgid "Waiting for your input"
 msgstr "入力を待っています"
+
+msgid "Waiting for your OK"
+msgstr "確認待ち"
 
 msgid "Waitlist signups"
 msgstr "ウェイトリスト登録"

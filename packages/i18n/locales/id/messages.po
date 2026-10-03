@@ -2447,6 +2447,9 @@ msgstr "Minta perubahan"
 msgid "Ask to make changes, @mention files, run /commands"
 msgstr "Minta perubahan, @mention file, jalankan /command"
 
+msgid "Ask what your agents are up to, or tell one what to do next."
+msgstr "Tanyakan apa yang sedang dikerjakan agenmu, atau beri tahu salah satunya apa yang harus dilakukan berikutnya."
+
 msgid "Aspect Ratio"
 msgstr "Aspect Ratio"
 
@@ -3403,6 +3406,12 @@ msgstr "Memeriksa host…"
 
 msgid "Checking out a PR requires a project"
 msgstr "Checkout PR memerlukan sebuah proyek"
+
+msgid "Checking pull requests in {what}"
+msgstr "Memeriksa pull request di {what}"
+
+msgid "Checking workspaces"
+msgstr "Memeriksa workspace"
 
 msgid "Checking..."
 msgstr "Memeriksa..."
@@ -4952,6 +4961,9 @@ msgstr "Tidak bisa memulai workspace cloud"
 msgid "Couldn't start design mode on this page"
 msgstr "Tidak bisa memulai mode desain di halaman ini"
 
+msgid "Couldn't start voice mode"
+msgstr "Tidak dapat memulai mode suara"
+
 msgid "Couldn't start workspace"
 msgstr "Tidak bisa memulai workspace"
 
@@ -5921,6 +5933,9 @@ msgstr "Dokumentasi"
 msgid "Documentation"
 msgstr "Dokumentasi"
 
+msgid "Doing it"
+msgstr "Sedang dijalankan"
+
 msgid "Don't ask again"
 msgstr "Jangan tanya lagi"
 
@@ -6281,6 +6296,12 @@ msgstr "Aktifkan akses jarak jauh dan biarkan komputer ini tetap aktif dengan Su
 msgid "Enable skill"
 msgstr "Aktifkan skill"
 
+msgid "End voice session"
+msgstr "Akhiri sesi suara"
+
+msgid "Ended"
+msgstr "Berakhir"
+
 msgid "Engineering deep-dives and launches."
 msgstr "Bahasan mendalam soal teknik dan peluncuran."
 
@@ -6474,6 +6495,9 @@ msgstr "Bentangkan proyek"
 
 msgid "Expand thread"
 msgstr "Bentangkan thread"
+
+msgid "Expand voice"
+msgstr "Perluas suara"
 
 msgid "Expand workspace"
 msgstr "Bentangkan workspace"
@@ -7314,11 +7338,20 @@ msgstr "Tampilan folder"
 msgid "Folders to check out into new worktrees, one per line, relative to the repo root. Files at the root are always included. Empty checks out everything."
 msgstr "Folder yang di-checkout ke worktree baru, satu per baris, relatif terhadap root repo. File di root selalu disertakan. Kosong berarti checkout semuanya."
 
+msgid "Follow"
+msgstr "Ikuti"
+
+msgid "Follow mode"
+msgstr "Mode ikuti"
+
 msgid "FOLLOW ON X"
 msgstr "IKUTI DI X"
 
 msgid "Follow terminal sessions live"
 msgstr "Ikuti sesi terminal secara langsung"
+
+msgid "Follow the conversation"
+msgstr "Ikuti percakapan"
 
 msgid "FOLLOW US"
 msgstr "IKUTI KAMI"
@@ -8383,6 +8416,9 @@ msgstr "Internal"
 msgid "Internet Disconnected"
 msgstr "Internet Terputus"
 
+msgid "Interrupt"
+msgstr "Sela"
+
 msgid "Interrupted"
 msgstr "Dihentikan"
 
@@ -9014,6 +9050,9 @@ msgstr "Menampilkan, membuat, memperbarui, dan menghapus workspace di sebuah hos
 msgid "List, get, create, update, and delete tasks; track status."
 msgstr "Menampilkan, mengambil, membuat, memperbarui, dan menghapus tugas; melacak status."
 
+msgid "Listening"
+msgstr "Mendengarkan"
+
 msgid "Listening agents"
 msgstr "Agen pendengar"
 
@@ -9022,6 +9061,9 @@ msgstr "Memantau pesan channel dan channel baru."
 
 msgid "Listening status unavailable"
 msgstr "Status mendengarkan tidak tersedia"
+
+msgid "Listing sessions in {what}"
+msgstr "Mendaftar sesi di {what}"
 
 msgid "live"
 msgstr "live"
@@ -9218,11 +9260,20 @@ msgstr "Keandalan jangka panjang melewati ambang batas. Pekerjaan yang diberikan
 msgid "Long-hover shortcut-only tooltip; its chip style is now the TooltipContent default"
 msgstr "Tooltip khusus pintasan saat hover lama; gaya chip-nya kini menjadi bawaan TooltipContent"
 
+msgid "Looking at {what}"
+msgstr "Melihat {what}"
+
 msgid "Looking for a mobile simulator…"
 msgstr "Mencari simulator seluler…"
 
 msgid "Looking for installed browsers…"
 msgstr "Mencari browser yang terpasang…"
+
+msgid "Looking for pages"
+msgstr "Mencari halaman"
+
+msgid "Looking up a workspace"
+msgstr "Mencari workspace"
 
 msgid "Looks good"
 msgstr "Terlihat bagus"
@@ -9549,6 +9600,9 @@ msgstr "Perkecil"
 msgid "Minimize GitHub issues"
 msgstr "Perkecil issue GitHub"
 
+msgid "Minimize voice"
+msgstr "Perkecil suara"
+
 msgid "Minimum contrast"
 msgstr "Kontras minimum"
 
@@ -9744,8 +9798,14 @@ msgstr "Beberapa proyek memakai repositori ini ({0}). Pilih proyeknya di pengatu
 msgid "Multiple projects use this repository ({0}). Open the project you want from settings to set it up on this device."
 msgstr "Beberapa proyek memakai repositori ini ({0}). Buka proyek yang Anda inginkan dari pengaturan untuk menyiapkannya di perangkat ini."
 
+msgid "Mute"
+msgstr "Bisukan"
+
 msgid "Mute notifications"
 msgstr "Bisukan notifikasi"
+
+msgid "Muted"
+msgstr "Dibisukan"
 
 msgid "My Agent"
 msgstr "Agen Saya"
@@ -9858,6 +9918,9 @@ msgstr "Jaringan Berubah"
 
 msgid "Never"
 msgstr "Tidak pernah"
+
+msgid "Never mind"
+msgstr "Dibatalkan"
 
 msgctxt "badge on a page published since the menu was last opened"
 msgid "New"
@@ -11408,6 +11471,9 @@ msgstr "Dibuka"
 msgid "opened PR #841 for review"
 msgstr "membuka PR #841 untuk direview"
 
+msgid "Opening {what}"
+msgstr "Membuka {what}"
+
 msgid "Opening files"
 msgstr "Membuka file"
 
@@ -11455,6 +11521,9 @@ msgstr "Opsi"
 
 msgid "Or ask your coding agent to install the Superset CLI."
 msgstr "Atau minta agen coding Anda memasang CLI Superset."
+
+msgid "or just say yes"
+msgstr "atau cukup katakan \"ya\""
 
 msgid "Orange"
 msgstr "Oranye"
@@ -12113,6 +12182,12 @@ msgstr "Prefix"
 msgid "Preparing"
 msgstr "Menyiapkan"
 
+msgid "Preparing a message for {what}"
+msgstr "Menyiapkan pesan untuk {what}"
+
+msgid "Preparing to restart {what}"
+msgstr "Bersiap memulai ulang {what}"
+
 msgid "Preserve commit history"
 msgstr "Pertahankan riwayat commit"
 
@@ -12610,6 +12685,9 @@ msgstr "Baca panduan agen coding paralel"
 msgid "Read the setup guide"
 msgstr "Baca panduan penyiapan"
 
+msgid "Reading {what}"
+msgstr "Membaca {what}"
+
 msgid "Reading usage…"
 msgstr "Membaca penggunaan…"
 
@@ -12706,6 +12784,9 @@ msgstr "Menyambungkan ulang"
 
 msgid "Reconnecting…"
 msgstr "Menyambungkan ulang…"
+
+msgid "Reconnecting… your conversation is kept."
+msgstr "Menyambungkan ulang… percakapanmu tetap tersimpan."
 
 msgid "Red"
 msgstr "Merah"
@@ -13214,6 +13295,9 @@ msgstr "Respons"
 
 msgid "Restart"
 msgstr "Restart"
+
+msgid "Restart {target}"
+msgstr "Mulai ulang {target}"
 
 msgid "Restart all terminals?"
 msgstr "Mulai ulang semua terminal?"
@@ -14212,6 +14296,9 @@ msgstr "Kirim review"
 msgid "Send to"
 msgstr "Kirim ke"
 
+msgid "Send to {target}"
+msgstr "Kirim ke {target}"
+
 msgid "Send to agent"
 msgstr "Kirim ke agen"
 
@@ -14929,6 +15016,9 @@ msgstr "Spam atau penipuan"
 msgid "Sparse checkout"
 msgstr "Sparse checkout"
 
+msgid "Speaking"
+msgstr "Berbicara"
+
 msgid "Specific"
 msgstr "Tertentu"
 
@@ -15137,6 +15227,9 @@ msgstr "Mulai satu dengan + di bilah tab."
 
 msgid "Start or stop the workspace run command"
 msgstr "Mulai atau hentikan perintah run workspace"
+
+msgid "Start voice mode"
+msgstr "Mulai mode suara"
 
 msgid "Start with the work."
 msgstr "Mulai dari pekerjaannya."
@@ -17146,6 +17239,9 @@ msgstr "Pengguna tanpa batas"
 msgid "Unlink task"
 msgstr "Lepaskan tautan tugas"
 
+msgid "Unmute"
+msgstr "Bunyikan"
+
 msgid "Unmute notifications"
 msgstr "Nyalakan notifikasi"
 
@@ -17591,6 +17687,9 @@ msgstr "Dari pengunjung ke unduhan ke akun"
 msgid "Visitors whose session began on a link an assistant gave them. This is the number an AEO effort should move."
 msgstr "Pengunjung yang sesinya dimulai dari tautan yang diberikan asisten. Ini angka yang harus digerakkan oleh upaya AEO."
 
+msgid "Voice"
+msgstr "Suara"
+
 msgid "Volume"
 msgstr "Volume"
 
@@ -17622,6 +17721,9 @@ msgstr "Menunggu pesan pertama dari subagen…"
 
 msgid "Waiting for your input"
 msgstr "Menunggu masukan Anda"
+
+msgid "Waiting for your OK"
+msgstr "Menunggu persetujuanmu"
 
 msgid "Waitlist signups"
 msgstr "Pendaftaran daftar tunggu"

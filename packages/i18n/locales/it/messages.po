@@ -2447,6 +2447,9 @@ msgstr "Chiedi delle modifiche"
 msgid "Ask to make changes, @mention files, run /commands"
 msgstr "Chiedi modifiche, @menziona file, esegui /comandi"
 
+msgid "Ask what your agents are up to, or tell one what to do next."
+msgstr "Chiedi cosa stanno facendo i tuoi agenti o di' a uno cosa fare dopo."
+
 msgid "Aspect Ratio"
 msgstr "Aspect Ratio"
 
@@ -3403,6 +3406,12 @@ msgstr "Verifica dell'host…"
 
 msgid "Checking out a PR requires a project"
 msgstr "Il checkout di una PR richiede un progetto"
+
+msgid "Checking pull requests in {what}"
+msgstr "Controllo delle pull request di {what}"
+
+msgid "Checking workspaces"
+msgstr "Controllo dei workspace"
 
 msgid "Checking..."
 msgstr "Verifica..."
@@ -4952,6 +4961,9 @@ msgstr "Impossibile avviare il workspace cloud"
 msgid "Couldn't start design mode on this page"
 msgstr "Impossibile avviare la modalità design su questa pagina"
 
+msgid "Couldn't start voice mode"
+msgstr "Impossibile avviare la modalità vocale"
+
 msgid "Couldn't start workspace"
 msgstr "Impossibile avviare il workspace"
 
@@ -5921,6 +5933,9 @@ msgstr "Docs"
 msgid "Documentation"
 msgstr "Documentazione"
 
+msgid "Doing it"
+msgstr "In corso"
+
 msgid "Don't ask again"
 msgstr "Non chiedere più"
 
@@ -6281,6 +6296,12 @@ msgstr "Attiva l’accesso remoto e mantieni questo computer attivo con Superset
 msgid "Enable skill"
 msgstr "Attiva la skill"
 
+msgid "End voice session"
+msgstr "Termina la sessione vocale"
+
+msgid "Ended"
+msgstr "Terminata"
+
 msgid "Engineering deep-dives and launches."
 msgstr "Approfondimenti tecnici e lanci."
 
@@ -6474,6 +6495,9 @@ msgstr "Espandi il progetto"
 
 msgid "Expand thread"
 msgstr "Espandi il thread"
+
+msgid "Expand voice"
+msgstr "Espandi voce"
 
 msgid "Expand workspace"
 msgstr "Espandi il workspace"
@@ -7314,11 +7338,20 @@ msgstr "Vista a cartelle"
 msgid "Folders to check out into new worktrees, one per line, relative to the repo root. Files at the root are always included. Empty checks out everything."
 msgstr "Cartelle da estrarre nei nuovi worktree, una per riga, relative alla radice del repo. I file nella radice sono sempre inclusi. Se vuoto, estrae tutto."
 
+msgid "Follow"
+msgstr "Segui"
+
+msgid "Follow mode"
+msgstr "Modalità segui"
+
 msgid "FOLLOW ON X"
 msgstr "SEGUICI SU X"
 
 msgid "Follow terminal sessions live"
 msgstr "Segui le sessioni del terminale in tempo reale"
+
+msgid "Follow the conversation"
+msgstr "Segui la conversazione"
 
 msgid "FOLLOW US"
 msgstr "SEGUICI"
@@ -8383,6 +8416,9 @@ msgstr "Interni"
 msgid "Internet Disconnected"
 msgstr "Internet disconnesso"
 
+msgid "Interrupt"
+msgstr "Interrompi"
+
 msgid "Interrupted"
 msgstr "Interrotto"
 
@@ -9014,6 +9050,9 @@ msgstr "Elenca, crea, aggiorna ed elimina i workspace su un host."
 msgid "List, get, create, update, and delete tasks; track status."
 msgstr "Elenca, ottieni, crea, aggiorna ed elimina i task; monitora lo stato."
 
+msgid "Listening"
+msgstr "In ascolto"
+
 msgid "Listening agents"
 msgstr "Agenti in ascolto"
 
@@ -9022,6 +9061,9 @@ msgstr "In ascolto dei messaggi dei canali e dei nuovi canali."
 
 msgid "Listening status unavailable"
 msgstr "Stato di ascolto non disponibile"
+
+msgid "Listing sessions in {what}"
+msgstr "Elenco delle sessioni di {what}"
 
 msgid "live"
 msgstr "live"
@@ -9218,11 +9260,20 @@ msgstr "L'affidabilità sul lungo periodo supera una soglia. Il lavoro assegnato
 msgid "Long-hover shortcut-only tooltip; its chip style is now the TooltipContent default"
 msgstr "Tooltip con sola scorciatoia su hover prolungato; il suo stile chip è ora il predefinito di TooltipContent"
 
+msgid "Looking at {what}"
+msgstr "Consultazione di {what}"
+
 msgid "Looking for a mobile simulator…"
 msgstr "Ricerca di un simulatore mobile…"
 
 msgid "Looking for installed browsers…"
 msgstr "Ricerca dei browser installati…"
+
+msgid "Looking for pages"
+msgstr "Ricerca delle pagine"
+
+msgid "Looking up a workspace"
+msgstr "Ricerca di un workspace"
 
 msgid "Looks good"
 msgstr "Mi sembra buono"
@@ -9549,6 +9600,9 @@ msgstr "Riduci"
 msgid "Minimize GitHub issues"
 msgstr "Riduci le issue GitHub"
 
+msgid "Minimize voice"
+msgstr "Riduci voce"
+
 msgid "Minimum contrast"
 msgstr "Contrasto minimo"
 
@@ -9744,8 +9798,14 @@ msgstr "Più progetti usano questo repository ({0}). Scegli il progetto nelle im
 msgid "Multiple projects use this repository ({0}). Open the project you want from settings to set it up on this device."
 msgstr "Più progetti usano questo repository ({0}). Apri dalle impostazioni il progetto che vuoi per configurarlo su questo dispositivo."
 
+msgid "Mute"
+msgstr "Disattiva microfono"
+
 msgid "Mute notifications"
 msgstr "Silenzia le notifiche"
+
+msgid "Muted"
+msgstr "Microfono disattivato"
 
 msgid "My Agent"
 msgstr "Il mio agente"
@@ -9858,6 +9918,9 @@ msgstr "Rete cambiata"
 
 msgid "Never"
 msgstr "Mai"
+
+msgid "Never mind"
+msgstr "Annullato"
 
 msgctxt "badge on a page published since the menu was last opened"
 msgid "New"
@@ -11408,6 +11471,9 @@ msgstr "Aperta"
 msgid "opened PR #841 for review"
 msgstr "aperta la PR #841 per la revisione"
 
+msgid "Opening {what}"
+msgstr "Apertura di {what}"
+
 msgid "Opening files"
 msgstr "Apertura dei file"
 
@@ -11455,6 +11521,9 @@ msgstr "Opzioni"
 
 msgid "Or ask your coding agent to install the Superset CLI."
 msgstr "Oppure chiedi al tuo agente di programmazione di installare la CLI di Superset."
+
+msgid "or just say yes"
+msgstr "oppure di' semplicemente «sì»"
 
 msgid "Orange"
 msgstr "Arancione"
@@ -12113,6 +12182,12 @@ msgstr "Prefisso"
 msgid "Preparing"
 msgstr "Preparazione"
 
+msgid "Preparing a message for {what}"
+msgstr "Preparazione di un messaggio per {what}"
+
+msgid "Preparing to restart {what}"
+msgstr "Preparazione del riavvio di {what}"
+
 msgid "Preserve commit history"
 msgstr "Conserva la cronologia dei commit"
 
@@ -12610,6 +12685,9 @@ msgstr "Leggi la guida agli agenti di programmazione in parallelo"
 msgid "Read the setup guide"
 msgstr "Leggi la guida alla configurazione"
 
+msgid "Reading {what}"
+msgstr "Lettura di {what}"
+
 msgid "Reading usage…"
 msgstr "Lettura dell'utilizzo…"
 
@@ -12706,6 +12784,9 @@ msgstr "Riconnessione"
 
 msgid "Reconnecting…"
 msgstr "Riconnessione…"
+
+msgid "Reconnecting… your conversation is kept."
+msgstr "Riconnessione… la conversazione viene conservata."
 
 msgid "Red"
 msgstr "Rosso"
@@ -13214,6 +13295,9 @@ msgstr "Risposta"
 
 msgid "Restart"
 msgstr "Riavvia"
+
+msgid "Restart {target}"
+msgstr "Riavvia {target}"
 
 msgid "Restart all terminals?"
 msgstr "Riavviare tutti i terminali?"
@@ -14212,6 +14296,9 @@ msgstr "Invia la revisione"
 msgid "Send to"
 msgstr "Invia a"
 
+msgid "Send to {target}"
+msgstr "Invia a {target}"
+
 msgid "Send to agent"
 msgstr "Invia all'agente"
 
@@ -14929,6 +15016,9 @@ msgstr "Spam o truffa"
 msgid "Sparse checkout"
 msgstr "Sparse checkout"
 
+msgid "Speaking"
+msgstr "Sta parlando"
+
 msgid "Specific"
 msgstr "Specifici"
 
@@ -15137,6 +15227,9 @@ msgstr "Avviane una con + nella barra delle schede."
 
 msgid "Start or stop the workspace run command"
 msgstr "Avvia o arresta il comando di esecuzione del workspace"
+
+msgid "Start voice mode"
+msgstr "Avvia la modalità vocale"
 
 msgid "Start with the work."
 msgstr "Parti dal lavoro."
@@ -17146,6 +17239,9 @@ msgstr "Utenti illimitati"
 msgid "Unlink task"
 msgstr "Scollega attività"
 
+msgid "Unmute"
+msgstr "Riattiva microfono"
+
 msgid "Unmute notifications"
 msgstr "Riattiva le notifiche"
 
@@ -17591,6 +17687,9 @@ msgstr "Da visitatori a download ad account"
 msgid "Visitors whose session began on a link an assistant gave them. This is the number an AEO effort should move."
 msgstr "Visitatori la cui sessione è iniziata da un link fornito da un assistente. È il numero che uno sforzo AEO deve muovere."
 
+msgid "Voice"
+msgstr "Voce"
+
 msgid "Volume"
 msgstr "Volume"
 
@@ -17622,6 +17721,9 @@ msgstr "In attesa del primo messaggio del sottoagente…"
 
 msgid "Waiting for your input"
 msgstr "In attesa del tuo input"
+
+msgid "Waiting for your OK"
+msgstr "In attesa della tua conferma"
 
 msgid "Waitlist signups"
 msgstr "Iscrizioni alla lista d'attesa"

@@ -2447,6 +2447,9 @@ msgstr "Napište, co změnit"
 msgid "Ask to make changes, @mention files, run /commands"
 msgstr "Požádejte o změny, zmiňte soubory přes @, spouštějte /commands"
 
+msgid "Ask what your agents are up to, or tell one what to do next."
+msgstr "Zeptej se, co dělají tvoji agenti, nebo jednomu řekni, co má dělat dál."
+
 msgid "Aspect Ratio"
 msgstr "Poměr stran"
 
@@ -3403,6 +3406,12 @@ msgstr "Kontroluji hosta…"
 
 msgid "Checking out a PR requires a project"
 msgstr "Checkout PR vyžaduje projekt"
+
+msgid "Checking pull requests in {what}"
+msgstr "Kontroluji pull requesty v {what}"
+
+msgid "Checking workspaces"
+msgstr "Kontroluji pracovní prostory"
 
 msgid "Checking..."
 msgstr "Ověřuji..."
@@ -4952,6 +4961,9 @@ msgstr "Nepodařilo se spustit cloudový pracovní prostor"
 msgid "Couldn't start design mode on this page"
 msgstr "Na této stránce se nepodařilo spustit režim designu"
 
+msgid "Couldn't start voice mode"
+msgstr "Hlasový režim se nepodařilo spustit"
+
 msgid "Couldn't start workspace"
 msgstr "Pracovní prostor se nepodařilo spustit"
 
@@ -5921,6 +5933,9 @@ msgstr "Dokumentace"
 msgid "Documentation"
 msgstr "Dokumentace"
 
+msgid "Doing it"
+msgstr "Provádím"
+
 msgid "Don't ask again"
 msgstr "Příště se neptat"
 
@@ -6281,6 +6296,12 @@ msgstr "Zapněte vzdálený přístup a nechte tento počítač aktivní se spu�
 msgid "Enable skill"
 msgstr "Zapnout skill"
 
+msgid "End voice session"
+msgstr "Ukončit hlasovou relaci"
+
+msgid "Ended"
+msgstr "Ukončeno"
+
 msgid "Engineering deep-dives and launches."
 msgstr "Technické hloubkové články a spuštění novinek."
 
@@ -6474,6 +6495,9 @@ msgstr "Rozbalit projekt"
 
 msgid "Expand thread"
 msgstr "Rozbalit vlákno"
+
+msgid "Expand voice"
+msgstr "Rozbalit hlas"
 
 msgid "Expand workspace"
 msgstr "Rozbalit pracovní prostor"
@@ -7314,11 +7338,20 @@ msgstr "Zobrazení složek"
 msgid "Folders to check out into new worktrees, one per line, relative to the repo root. Files at the root are always included. Empty checks out everything."
 msgstr "Složky, které se mají vytáhnout do nových worktree, jedna na řádek, relativně ke kořeni repozitáře. Soubory v kořeni jsou vždy zahrnuty. Prázdné vytáhne vše."
 
+msgid "Follow"
+msgstr "Sledovat"
+
+msgid "Follow mode"
+msgstr "Režim sledování"
+
 msgid "FOLLOW ON X"
 msgstr "SLEDOVAT NA X"
 
 msgid "Follow terminal sessions live"
 msgstr "Sledujte relace terminálu živě"
+
+msgid "Follow the conversation"
+msgstr "Sledovat konverzaci"
 
 msgid "FOLLOW US"
 msgstr "SLEDUJTE NÁS"
@@ -8383,6 +8416,9 @@ msgstr "Interní"
 msgid "Internet Disconnected"
 msgstr "Internet odpojen"
 
+msgid "Interrupt"
+msgstr "Přerušit"
+
 msgid "Interrupted"
 msgstr "Přerušeno"
 
@@ -9014,6 +9050,9 @@ msgstr "Vypisovat, vytvářet, upravovat a mazat pracovní prostory na hostu."
 msgid "List, get, create, update, and delete tasks; track status."
 msgstr "Vypisovat, načítat, vytvářet, upravovat a mazat úkoly; sledovat stav."
 
+msgid "Listening"
+msgstr "Poslouchám"
+
 msgid "Listening agents"
 msgstr "Naslouchající agenti"
 
@@ -9022,6 +9061,9 @@ msgstr "Naslouchá zprávám v kanálech a novým kanálům."
 
 msgid "Listening status unavailable"
 msgstr "Stav naslouchání není dostupný"
+
+msgid "Listing sessions in {what}"
+msgstr "Vypisuji relace v {what}"
 
 msgid "live"
 msgstr "živě"
@@ -9218,11 +9260,20 @@ msgstr "Spolehlivost na dlouhém horizontu překročí práh. Práce zadaná v 1
 msgid "Long-hover shortcut-only tooltip; its chip style is now the TooltipContent default"
 msgstr "Tooltip jen se zkratkou při dlouhém najetí; jeho styl čipu je nyní výchozí pro TooltipContent"
 
+msgid "Looking at {what}"
+msgstr "Prohlížím {what}"
+
 msgid "Looking for a mobile simulator…"
 msgstr "Hledám mobilní simulátor…"
 
 msgid "Looking for installed browsers…"
 msgstr "Hledám nainstalované prohlížeče…"
+
+msgid "Looking for pages"
+msgstr "Hledám stránky"
+
+msgid "Looking up a workspace"
+msgstr "Hledám pracovní prostor"
 
 msgid "Looks good"
 msgstr "Vypadá dobře"
@@ -9549,6 +9600,9 @@ msgstr "Minimalizovat"
 msgid "Minimize GitHub issues"
 msgstr "Minimalizovat GitHub issues"
 
+msgid "Minimize voice"
+msgstr "Minimalizovat hlas"
+
 msgid "Minimum contrast"
 msgstr "Minimální kontrast"
 
@@ -9744,8 +9798,14 @@ msgstr "Tento repozitář používá více projektů ({0}). Vyberte v nastavení
 msgid "Multiple projects use this repository ({0}). Open the project you want from settings to set it up on this device."
 msgstr "Tento repozitář používá více projektů ({0}). Otevřete v nastavení projekt, který chcete na tomto zařízení nastavit."
 
+msgid "Mute"
+msgstr "Ztlumit"
+
 msgid "Mute notifications"
 msgstr "Ztlumit oznámení"
+
+msgid "Muted"
+msgstr "Ztlumeno"
 
 msgid "My Agent"
 msgstr "Můj agent"
@@ -9858,6 +9918,9 @@ msgstr "Síť se změnila"
 
 msgid "Never"
 msgstr "Nikdy"
+
+msgid "Never mind"
+msgstr "Zrušeno"
 
 msgctxt "badge on a page published since the menu was last opened"
 msgid "New"
@@ -11408,6 +11471,9 @@ msgstr "Otevřen"
 msgid "opened PR #841 for review"
 msgstr "otevřel PR #841 k revizi"
 
+msgid "Opening {what}"
+msgstr "Otevírám {what}"
+
 msgid "Opening files"
 msgstr "Otevírání souborů"
 
@@ -11455,6 +11521,9 @@ msgstr "Možnosti"
 
 msgid "Or ask your coding agent to install the Superset CLI."
 msgstr "Nebo požádejte svého kódovacího agenta, ať nainstaluje Superset CLI."
+
+msgid "or just say yes"
+msgstr "nebo prostě řekni „ano“"
 
 msgid "Orange"
 msgstr "Oranžová"
@@ -12113,6 +12182,12 @@ msgstr "Prefix"
 msgid "Preparing"
 msgstr "Připravuji"
 
+msgid "Preparing a message for {what}"
+msgstr "Připravuji zprávu pro {what}"
+
+msgid "Preparing to restart {what}"
+msgstr "Připravuji restart {what}"
+
 msgid "Preserve commit history"
 msgstr "Zachová historii commitů"
 
@@ -12610,6 +12685,9 @@ msgstr "Přečíst průvodce paralelními kódovacími agenty"
 msgid "Read the setup guide"
 msgstr "Přečíst průvodce nastavením"
 
+msgid "Reading {what}"
+msgstr "Čtu {what}"
+
 msgid "Reading usage…"
 msgstr "Načítání využití…"
 
@@ -12706,6 +12784,9 @@ msgstr "Připojuji znovu"
 
 msgid "Reconnecting…"
 msgstr "Připojuji znovu…"
+
+msgid "Reconnecting… your conversation is kept."
+msgstr "Připojuji znovu… konverzace zůstává zachována."
 
 msgid "Red"
 msgstr "Červená"
@@ -13214,6 +13295,9 @@ msgstr "Odpověď"
 
 msgid "Restart"
 msgstr "Restartovat"
+
+msgid "Restart {target}"
+msgstr "Restartovat {target}"
 
 msgid "Restart all terminals?"
 msgstr "Restartovat všechny terminály?"
@@ -14212,6 +14296,9 @@ msgstr "Odeslat revizi"
 msgid "Send to"
 msgstr "Odeslat komu"
 
+msgid "Send to {target}"
+msgstr "Odeslat do {target}"
+
 msgid "Send to agent"
 msgstr "Odeslat agentovi"
 
@@ -14929,6 +15016,9 @@ msgstr "Spam nebo podvod"
 msgid "Sparse checkout"
 msgstr "Sparse checkout"
 
+msgid "Speaking"
+msgstr "Mluvím"
+
 msgid "Specific"
 msgstr "Konkrétní"
 
@@ -15137,6 +15227,9 @@ msgstr "Spusťte ji pomocí + v liště karet."
 
 msgid "Start or stop the workspace run command"
 msgstr "Spustit nebo zastavit spouštěcí příkaz pracovního prostoru"
+
+msgid "Start voice mode"
+msgstr "Spustit hlasový režim"
 
 msgid "Start with the work."
 msgstr "Začněte prací."
@@ -17146,6 +17239,9 @@ msgstr "Neomezeně uživatelů"
 msgid "Unlink task"
 msgstr "Odpojit úkol"
 
+msgid "Unmute"
+msgstr "Zrušit ztlumení"
+
 msgid "Unmute notifications"
 msgstr "Zrušit ztlumení oznámení"
 
@@ -17591,6 +17687,9 @@ msgstr "Od návštěvníků ke stažením k účtům"
 msgid "Visitors whose session began on a link an assistant gave them. This is the number an AEO effort should move."
 msgstr "Návštěvníci, jejichž relace začala odkazem od asistenta. To je číslo, kterým má AEO úsilí pohnout."
 
+msgid "Voice"
+msgstr "Hlas"
+
 msgid "Volume"
 msgstr "Hlasitost"
 
@@ -17622,6 +17721,9 @@ msgstr "Čekání na první zprávu subagenta…"
 
 msgid "Waiting for your input"
 msgstr "Čeká na váš vstup"
+
+msgid "Waiting for your OK"
+msgstr "Čekám na tvé potvrzení"
 
 msgid "Waitlist signups"
 msgstr "Zápisy na čekací listinu"

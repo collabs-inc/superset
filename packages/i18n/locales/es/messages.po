@@ -2447,6 +2447,9 @@ msgstr "Pide que se hagan cambios"
 msgid "Ask to make changes, @mention files, run /commands"
 msgstr "Pedir cambios, mencionar archivos con @, ejecutar /comandos"
 
+msgid "Ask what your agents are up to, or tell one what to do next."
+msgstr "Pregunta qué están haciendo tus agentes o dile a uno qué hacer a continuación."
+
 msgid "Aspect Ratio"
 msgstr "Relación de aspecto"
 
@@ -3403,6 +3406,12 @@ msgstr "Comprobando el host…"
 
 msgid "Checking out a PR requires a project"
 msgstr "Descargar una PR requiere un proyecto"
+
+msgid "Checking pull requests in {what}"
+msgstr "Comprobando los pull requests de {what}"
+
+msgid "Checking workspaces"
+msgstr "Comprobando espacios de trabajo"
 
 msgid "Checking..."
 msgstr "Comprobando..."
@@ -4952,6 +4961,9 @@ msgstr "No se pudo iniciar el espacio de trabajo en la nube"
 msgid "Couldn't start design mode on this page"
 msgstr "No se pudo iniciar el modo diseño en esta página"
 
+msgid "Couldn't start voice mode"
+msgstr "No se pudo iniciar el modo de voz"
+
 msgid "Couldn't start workspace"
 msgstr "No se pudo iniciar el espacio de trabajo"
 
@@ -5921,6 +5933,9 @@ msgstr "Documentación"
 msgid "Documentation"
 msgstr "Documentación"
 
+msgid "Doing it"
+msgstr "En marcha"
+
 msgid "Don't ask again"
 msgstr "No volver a preguntar"
 
@@ -6281,6 +6296,12 @@ msgstr "Activa el acceso remoto y mantén este ordenador activo con Superset en 
 msgid "Enable skill"
 msgstr "Activar skill"
 
+msgid "End voice session"
+msgstr "Terminar la sesión de voz"
+
+msgid "Ended"
+msgstr "Terminada"
+
 msgid "Engineering deep-dives and launches."
 msgstr "Análisis técnicos a fondo y lanzamientos."
 
@@ -6474,6 +6495,9 @@ msgstr "Expandir el proyecto"
 
 msgid "Expand thread"
 msgstr "Expandir el hilo"
+
+msgid "Expand voice"
+msgstr "Expandir voz"
 
 msgid "Expand workspace"
 msgstr "Expandir el espacio de trabajo"
@@ -7314,11 +7338,20 @@ msgstr "Vista de carpetas"
 msgid "Folders to check out into new worktrees, one per line, relative to the repo root. Files at the root are always included. Empty checks out everything."
 msgstr "Carpetas que se extraen en los worktrees nuevos, una por línea, relativas a la raíz del repo. Los archivos de la raíz se incluyen siempre. Si se deja vacío, se extrae todo."
 
+msgid "Follow"
+msgstr "Seguir"
+
+msgid "Follow mode"
+msgstr "Modo seguir"
+
 msgid "FOLLOW ON X"
 msgstr "SEGUIR EN X"
 
 msgid "Follow terminal sessions live"
 msgstr "Sigue las sesiones de terminal en directo"
+
+msgid "Follow the conversation"
+msgstr "Seguir la conversación"
 
 msgid "FOLLOW US"
 msgstr "SÍGUENOS"
@@ -8383,6 +8416,9 @@ msgstr "Internos"
 msgid "Internet Disconnected"
 msgstr "Sin conexión a Internet"
 
+msgid "Interrupt"
+msgstr "Interrumpir"
+
 msgid "Interrupted"
 msgstr "Interrumpido"
 
@@ -9014,6 +9050,9 @@ msgstr "Listar, crear, actualizar y eliminar espacios de trabajo en un host."
 msgid "List, get, create, update, and delete tasks; track status."
 msgstr "Listar, obtener, crear, actualizar y eliminar tareas; seguir su estado."
 
+msgid "Listening"
+msgstr "Escuchando"
+
 msgid "Listening agents"
 msgstr "Agentes que reciben comentarios"
 
@@ -9022,6 +9061,9 @@ msgstr "A la escucha de mensajes de canal y de canales nuevos."
 
 msgid "Listening status unavailable"
 msgstr "Estado de recepción de comentarios no disponible"
+
+msgid "Listing sessions in {what}"
+msgstr "Listando las sesiones de {what}"
 
 msgid "live"
 msgstr "en vivo"
@@ -9218,11 +9260,20 @@ msgstr "La fiabilidad a largo plazo cruza un umbral. El trabajo asignado a las 1
 msgid "Long-hover shortcut-only tooltip; its chip style is now the TooltipContent default"
 msgstr "Tooltip de solo atajo que aparece tras un hover largo; su estilo de chip es ahora el predeterminado de TooltipContent"
 
+msgid "Looking at {what}"
+msgstr "Consultando {what}"
+
 msgid "Looking for a mobile simulator…"
 msgstr "Buscando un simulador móvil…"
 
 msgid "Looking for installed browsers…"
 msgstr "Buscando navegadores instalados…"
+
+msgid "Looking for pages"
+msgstr "Buscando páginas"
+
+msgid "Looking up a workspace"
+msgstr "Buscando un espacio de trabajo"
 
 msgid "Looks good"
 msgstr "Se ve bien"
@@ -9549,6 +9600,9 @@ msgstr "Minimizar"
 msgid "Minimize GitHub issues"
 msgstr "Minimizar los issues de GitHub"
 
+msgid "Minimize voice"
+msgstr "Minimizar voz"
+
 msgid "Minimum contrast"
 msgstr "Contraste mínimo"
 
@@ -9744,8 +9798,14 @@ msgstr "Varios proyectos usan este repositorio ({0}). Elige el proyecto en la co
 msgid "Multiple projects use this repository ({0}). Open the project you want from settings to set it up on this device."
 msgstr "Varios proyectos usan este repositorio ({0}). Abre desde la configuración el proyecto que quieras para configurarlo en este dispositivo."
 
+msgid "Mute"
+msgstr "Silenciar"
+
 msgid "Mute notifications"
 msgstr "Silenciar notificaciones"
+
+msgid "Muted"
+msgstr "Silenciado"
 
 msgid "My Agent"
 msgstr "Mi agente"
@@ -9858,6 +9918,9 @@ msgstr "La red cambió"
 
 msgid "Never"
 msgstr "Nunca"
+
+msgid "Never mind"
+msgstr "Cancelado"
 
 msgctxt "badge on a page published since the menu was last opened"
 msgid "New"
@@ -11408,6 +11471,9 @@ msgstr "Abierta"
 msgid "opened PR #841 for review"
 msgstr "abrió la PR #841 para revisión"
 
+msgid "Opening {what}"
+msgstr "Abriendo {what}"
+
 msgid "Opening files"
 msgstr "Abrir archivos"
 
@@ -11455,6 +11521,9 @@ msgstr "Opciones"
 
 msgid "Or ask your coding agent to install the Superset CLI."
 msgstr "O pídele a tu agente de código que instale la CLI de Superset."
+
+msgid "or just say yes"
+msgstr "o simplemente di «sí»"
 
 msgid "Orange"
 msgstr "Naranja"
@@ -12113,6 +12182,12 @@ msgstr "Prefijo"
 msgid "Preparing"
 msgstr "Preparando"
 
+msgid "Preparing a message for {what}"
+msgstr "Preparando un mensaje para {what}"
+
+msgid "Preparing to restart {what}"
+msgstr "Preparando el reinicio de {what}"
+
 msgid "Preserve commit history"
 msgstr "Conservar el historial de commits"
 
@@ -12610,6 +12685,9 @@ msgstr "Leer la guía sobre agentes de código en paralelo"
 msgid "Read the setup guide"
 msgstr "Leer la guía de configuración"
 
+msgid "Reading {what}"
+msgstr "Leyendo {what}"
+
 msgid "Reading usage…"
 msgstr "Leyendo el uso…"
 
@@ -12706,6 +12784,9 @@ msgstr "Reconectando"
 
 msgid "Reconnecting…"
 msgstr "Reconectando…"
+
+msgid "Reconnecting… your conversation is kept."
+msgstr "Reconectando… tu conversación se conserva."
 
 msgid "Red"
 msgstr "Rojo"
@@ -13214,6 +13295,9 @@ msgstr "Respuesta"
 
 msgid "Restart"
 msgstr "Reiniciar"
+
+msgid "Restart {target}"
+msgstr "Reiniciar {target}"
 
 msgid "Restart all terminals?"
 msgstr "¿Reiniciar todas las terminales?"
@@ -14212,6 +14296,9 @@ msgstr "Enviar revisión"
 msgid "Send to"
 msgstr "Enviar a"
 
+msgid "Send to {target}"
+msgstr "Enviar a {target}"
+
 msgid "Send to agent"
 msgstr "Enviar al agente"
 
@@ -14929,6 +15016,9 @@ msgstr "Spam o estafa"
 msgid "Sparse checkout"
 msgstr "Sparse checkout"
 
+msgid "Speaking"
+msgstr "Hablando"
+
 msgid "Specific"
 msgstr "Específicos"
 
@@ -15137,6 +15227,9 @@ msgstr "Inicia una con + en la barra de pestañas."
 
 msgid "Start or stop the workspace run command"
 msgstr "Iniciar o detener el comando de ejecución del espacio de trabajo"
+
+msgid "Start voice mode"
+msgstr "Iniciar el modo de voz"
 
 msgid "Start with the work."
 msgstr "Empieza por el trabajo."
@@ -17146,6 +17239,9 @@ msgstr "Usuarios ilimitados"
 msgid "Unlink task"
 msgstr "Desvincular tarea"
 
+msgid "Unmute"
+msgstr "Activar el micrófono"
+
 msgid "Unmute notifications"
 msgstr "Reactivar notificaciones"
 
@@ -17591,6 +17687,9 @@ msgstr "De visitantes a descargas a cuentas"
 msgid "Visitors whose session began on a link an assistant gave them. This is the number an AEO effort should move."
 msgstr "Visitantes cuya sesión empezó en un enlace que les dio un asistente. Es la cifra que un esfuerzo de AEO debe mover."
 
+msgid "Voice"
+msgstr "Voz"
+
 msgid "Volume"
 msgstr "Volumen"
 
@@ -17622,6 +17721,9 @@ msgstr "Esperando el primer mensaje del subagente…"
 
 msgid "Waiting for your input"
 msgstr "Esperando tu respuesta"
+
+msgid "Waiting for your OK"
+msgstr "Esperando tu confirmación"
 
 msgid "Waitlist signups"
 msgstr "Registros en la lista de espera"
