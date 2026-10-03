@@ -42,6 +42,7 @@ config.resolver.extraNodeModules = {
 	),
 	"@superset/paste-input": path.resolve(projectRoot, "modules/paste-input"),
 	"@superset/title-press": path.resolve(projectRoot, "modules/title-press"),
+	"@superset/voice": path.resolve(projectRoot, "modules/voice"),
 };
 
 // Worklets Bundle Mode (react-native-streamdown): resolves the generated
