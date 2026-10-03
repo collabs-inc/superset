@@ -79,6 +79,10 @@ export const env = createEnv({
 		GH_APP_CLIENT_ID: z.string().min(1).optional(),
 		GH_APP_CLIENT_SECRET: z.string().min(1).optional(),
 		SERVER_ANTHROPIC_API_KEY: z.string().min(1),
+		// Optional: mobile voice mode reports "not configured" wherever this
+		// is unset, and everything else keeps booting. The same key the
+		// sandbox provider injects at its edge for agents.
+		OPENAI_API_KEY: z.string().min(1).optional(),
 		RELAY_URL: z.string().url().default("https://relay.superset.sh"),
 		REALTIME_URL: z.string().url().default("https://realtime.superset.sh"),
 		REALTIME_NUDGE_SECRET: z.string().min(1),

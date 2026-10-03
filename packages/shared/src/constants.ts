@@ -126,6 +126,8 @@ export const FEATURE_FLAGS = {
 	WEB_AGENTS_UI_ACCESS: "web-agents-ui-access",
 	/** Gates access to Cloud features (environment variables, sandboxes). */
 	CLOUD_ACCESS: "cloud-access",
+	/** Shows the voice mode entry on mobile Home. Internal while it is untested outside the team. */
+	MOBILE_VOICE_MODE: "mobile-voice-mode",
 	/** When enabled, blocks remote agent execution on the desktop (e.g., for enterprise orgs). */
 	DISABLE_REMOTE_AGENT: "disable-remote-agent",
 	/**
