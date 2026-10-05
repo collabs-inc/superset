@@ -23,6 +23,8 @@ if [ ! -x "$runtime/opt/Superset/superset" ] || [ ! -f "$runtime/.cube-sha256" ]
   rm -rf "$runtime"
   mv "$stage/runtime" "$runtime"
 fi
+# Also enforce Cube-owned updates when reusing a previously extracted cache.
+rm -f "$runtime/opt/Superset/resources/app-update.yml"
 script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 sh "$script_dir/desktop/install.sh"
 echo "Superset $version is installed."
