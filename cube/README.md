@@ -74,9 +74,11 @@ An older installation whose system machine ID was already lost cannot decrypt
 its previous sign-in; the application preserves that encrypted file in a
 `auth-token.enc.corrupt-*` quarantine and requires normal sign-in again.
 
-To build a release overlay after compiling `apps/desktop/dist`:
+To build a release overlay, compile `apps/desktop/dist` with production
+configuration and the Linux CLI target, then package it:
 
 ```sh
+(cd apps/desktop && NODE_ENV=production TARGET_PLATFORM=linux TARGET_ARCH=x64 bun run compile:app)
 node cube/package.mjs cube/out/superset-browser.tar.gz
 ```
 

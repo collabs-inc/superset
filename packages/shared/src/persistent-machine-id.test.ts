@@ -57,7 +57,7 @@ test("only the Cube browser host uses the persisted identity", () => {
 	for (const [browserMode, expected] of [
 		["1", "true"],
 		["0", "false"],
-	]) {
+	] as const) {
 		expect(
 			execFileSync(process.execPath, ["-e", script], {
 				env: {
