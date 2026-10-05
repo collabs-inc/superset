@@ -8,6 +8,7 @@ import { promisify } from 'node:util';
 import { setTimeout as delay } from 'node:timers/promises';
 import { assertPortAvailable, runBackend } from './backend.mjs';
 import { ProcessGroup } from './processes.mjs';
+import { systemRuntime } from './system-runtime.mjs';
 
 const run = promisify(execFile);
 
@@ -30,6 +31,7 @@ export async function runBrowser() {
   await assertPortAvailable(port);
   const release = JSON.parse(await readFile(new URL('./runtime.json', import.meta.url), 'utf8'));
   const cache = path.join(process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'cube-superset');
+  const dependencies = await systemRuntime(cache);
   const install = process.env.CUBE_SUPERSET_RUNTIME_DIR || path.join(cache, `browser-${release.overlay.sha256}`);
   const dataDir = path.resolve(process.env.CUBE_SUPERSET_DATA_DIR || path.join(process.env.XDG_DATA_HOME || path.join(os.homedir(), '.local/share'), 'cube-superset'));
   const state = path.join(dataDir, 'bridge');
@@ -50,6 +52,8 @@ export async function runBrowser() {
     const env = { ...process.env, DISPLAY: undefined, WAYLAND_DISPLAY: undefined, XAUTHORITY: undefined, XDG_RUNTIME_DIR: runtime,
       DBUS_SESSION_BUS_ADDRESS: `unix:path=${runtime}/bus`, GNOME_KEYRING_CONTROL: path.join(runtime, 'keyring'),
       XDG_CURRENT_DESKTOP: 'GNOME', DESKTOP_SESSION: 'gnome',
+      LD_LIBRARY_PATH: [dependencies.libraryPath, process.env.LD_LIBRARY_PATH].filter(Boolean).join(':'),
+      GSETTINGS_SCHEMA_DIR: dependencies.schemaDir,
       PATH: `${process.env.HOME}/.local/bin:${process.env.PATH || ''}` };
     const virtualDisplay = process.env.CUBE_SUPERSET_VIRTUAL_DISPLAY === '1';
     if (virtualDisplay) {
@@ -65,10 +69,13 @@ export async function runBrowser() {
       env.XAUTHORITY = authFile;
     }
     const serviceEnv = { ...env, XDG_CONFIG_HOME: path.join(state, 'config'), XDG_DATA_HOME: path.join(state, 'data'), XDG_CACHE_HOME: path.join(state, 'cache') };
-    group.spawn('dbus-daemon', ['--session', '--nofork', `--address=${env.DBUS_SESSION_BUS_ADDRESS}`], { env: serviceEnv });
+    const busConfig = path.join(runtime, 'session.conf');
+    const busAddress = env.DBUS_SESSION_BUS_ADDRESS.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
+    await writeFile(busConfig, `<busconfig><type>session</type><listen>${busAddress}</listen><auth>EXTERNAL</auth><policy context="default"><allow send_destination="*" eavesdrop="true"/><allow receive_sender="*" eavesdrop="true"/><allow own="*"/></policy></busconfig>`, { mode: 0o600 });
+    group.spawn(dependencies.dbusDaemon, [`--config-file=${busConfig}`, '--nofork'], { env: serviceEnv, stdio: ['ignore', 'ignore', 'inherit'] });
     for (let attempt = 0; attempt < 100; attempt++) {
       if (failure) throw failure;
-      try { await run('dbus-send', ['--session', '--type=method_call', '--print-reply', '--dest=org.freedesktop.DBus', '/', 'org.freedesktop.DBus.ListNames'], { env: serviceEnv, timeout: 1000 }); break; }
+      try { await run(dependencies.dbusSend, ['--session', '--type=method_call', '--print-reply', '--dest=org.freedesktop.DBus', '/', 'org.freedesktop.DBus.ListNames'], { env: serviceEnv, timeout: 1000 }); break; }
       catch { if (attempt === 99) throw new Error('Private D-Bus did not become ready.'); await delay(50); }
     }
     const passwordFile = process.env.CUBE_SUPERSET_KEYRING_PASSWORD_FILE || path.join(state, 'keyring-password');
@@ -82,16 +89,16 @@ export async function runBrowser() {
       password = Buffer.from(randomBytes(32).toString('hex'));
       await writeFile(passwordFile, password, { mode: 0o600, flag: 'wx' });
     }
-    const keyring = group.spawn('gnome-keyring-daemon', ['--foreground', '--unlock', '--components=secrets', `--control-directory=${env.GNOME_KEYRING_CONTROL}`], { env: serviceEnv, stdio: ['pipe', 'ignore', 'inherit'] });
+    const keyring = group.spawn(dependencies.keyringDaemon, ['--foreground', '--unlock', '--components=secrets', `--control-directory=${env.GNOME_KEYRING_CONTROL}`], { env: serviceEnv, stdio: ['pipe', 'ignore', 'inherit'] });
     keyring.stdin.end(password);
     await once(keyring.stdin, 'finish');
     password.fill(0);
     for (let attempt = 0; attempt < 100; attempt++) {
       if (failure) throw failure;
       try {
-        const { stdout } = await run('dbus-send', ['--session', '--print-reply', '--dest=org.freedesktop.DBus', '/', 'org.freedesktop.DBus.NameHasOwner', 'string:org.freedesktop.secrets'], { env: serviceEnv, timeout: 1000 });
+        const { stdout } = await run(dependencies.dbusSend, ['--session', '--print-reply', '--dest=org.freedesktop.DBus', '/', 'org.freedesktop.DBus.NameHasOwner', 'string:org.freedesktop.secrets'], { env: serviceEnv, timeout: 1000 });
         if (!stdout.includes('boolean true')) throw new Error('Private keyring is still starting.');
-        const unlocked = await run('dbus-send', ['--session', '--print-reply', '--dest=org.freedesktop.secrets', '/org/freedesktop/secrets/collection/login', 'org.freedesktop.DBus.Properties.Get', 'string:org.freedesktop.Secret.Collection', 'string:Locked'], { env: serviceEnv, timeout: 1000 });
+        const unlocked = await run(dependencies.dbusSend, ['--session', '--print-reply', '--dest=org.freedesktop.secrets', '/org/freedesktop/secrets/collection/login', 'org.freedesktop.DBus.Properties.Get', 'string:org.freedesktop.Secret.Collection', 'string:Locked'], { env: serviceEnv, timeout: 1000 });
         if (!unlocked.stdout.includes('boolean false')) throw new Error('Private keyring is locked.');
         break;
       }

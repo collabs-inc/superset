@@ -12,14 +12,18 @@ an empty backend window; no display server is started. The browser
 host binds to loopback `$PORT` behind Cube's app gate. Chromium's sandbox remains
 enabled. The launcher owns its private D-Bus, keyring and backend processes.
 
-The machine needs Linux x64 and Node 22+. On Debian 12, install:
-
-```sh
-apt-get update
-apt-get install -y --no-install-recommends curl ca-certificates \
-  libgtk-3-0 libnss3 libgbm1 libasound2 libsecret-1-0 \
-  dbus gnome-keyring
-```
+The runtime targets Cube's Debian 12 x64 image with Node 22+. Its base image
+supplies curl, CA certificates, tar, dpkg-deb, sha256sum, flock,
+glib-compile-schemas and Electron's base NSS, GBM, audio and GLib libraries.
+The installer downloads checksum-pinned Debian packages from
+`system-packages.json` and extracts the remaining GTK, D-Bus, keyring and settings
+dependencies into `~/.cache/cube-superset/system-<manifest-sha256>`. It does not
+install system packages or require root. The prefix stays on Cube's persistent
+volume across machine reboots, which can discard changes to the system image.
+The launcher uses absolute private service paths and a private D-Bus config;
+it does not depend on a system session bus. The host's glibc and ELF loader are
+retained. This limited dependency set is not a portable runtime for other Linux
+distributions. Debian copyright notices remain under the prefix's `usr/share/doc`.
 
 If an Electron platform issue requires an X server, install `xvfb xauth` and set
 `CUBE_SUPERSET_VIRTUAL_DISPLAY=1`. This optional fallback uses a private invisible
@@ -31,6 +35,8 @@ native dependencies, replaces the compiled application and renderer, and writes
 an immutable cache under `~/.cache/cube-superset/browser-<sha256>`. Cube owns
 updates; the independent upstream updater is disabled. Installation neither
 starts the app nor modifies existing profiles.
+Private dependencies are checked before reusing an existing browser cache, so
+updating an older installation also repairs the missing dependency prefix.
 
 Profiles and native state persist at
 `${XDG_DATA_HOME:-$HOME/.local/share}/cube-superset` (override with
@@ -103,7 +109,11 @@ agent requests still require the user's normal Superset account setup.
 
 Cloud validation on Debian 12 confirmed the actual sign-in DOM, headless HTTP
 startup with no X server, the native smoke checks, and stop/start with byte-for-
-byte preservation of the encrypted keyring. All eight launcher/package tests
-passed on Linux and macOS. The stop check confirmed the backend, its terminal
+byte preservation of the encrypted keyring. The ten launcher/package tests
+pass on Linux; macOS passes eight and skips the two Debian-package tests.
+The private dependency checks exercise checksum rejection, cached operation
+after deleting the download, service execution without PATH and private settings
+schemas. Reboot-clean cloud validation also confirms startup and native checks
+without installing any system packages. The stop check confirmed the backend, its terminal
 host, D-Bus and keyring exited while unrelated live app processes stayed alive.
 These checks do not establish authenticated workspace or model-provider flows.

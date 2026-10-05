@@ -1,0 +1,101 @@
+{
+  "platform": "debian12-x64",
+  "packages": [
+    {
+      "name": "gsettings-desktop-schemas",
+      "version": "43.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/g/gsettings-desktop-schemas/gsettings-desktop-schemas_43.0-1_all.deb",
+      "sha256": "15cc7142c3ddea0551b834c53c4d3b5cd8f5485e695100966877f2be50def7af"
+    },
+    {
+      "name": "dbus-daemon",
+      "version": "1.14.10-1~deb12u1",
+      "url": "https://deb.debian.org/debian/pool/main/d/dbus/dbus-daemon_1.14.10-1~deb12u1_amd64.deb",
+      "sha256": "d35e43de83f7df870196d292a60a56d320c47ce503bc586b30e47a192090302e"
+    },
+    {
+      "name": "dbus-bin",
+      "version": "1.14.10-1~deb12u1",
+      "url": "https://deb.debian.org/debian/pool/main/d/dbus/dbus-bin_1.14.10-1~deb12u1_amd64.deb",
+      "sha256": "7273d6f5ddcafa6bc81e319997f60e9b511a92c4414c1d4ecb05cba9e755da57"
+    },
+    {
+      "name": "gnome-keyring",
+      "version": "42.1-1+b2",
+      "url": "https://deb.debian.org/debian/pool/main/g/gnome-keyring/gnome-keyring_42.1-1+b2_amd64.deb",
+      "sha256": "c4078a990ce3d739d0d92a07b2120a3b4e8c7e84e40a72c0be27104ed001aa8d"
+    },
+    {
+      "name": "libgtk-3-0",
+      "version": "3.24.38-2~deb12u3",
+      "url": "https://deb.debian.org/debian/pool/main/g/gtk+3.0/libgtk-3-0_3.24.38-2~deb12u3_amd64.deb",
+      "sha256": "0ff7375c98b5a8d6aafc6096b21d9f7bae4ecb581d31fce5d37be18f55b489a2"
+    },
+    {
+      "name": "libapparmor1",
+      "version": "3.0.8-3",
+      "url": "https://deb.debian.org/debian/pool/main/a/apparmor/libapparmor1_3.0.8-3_amd64.deb",
+      "sha256": "4b79f49eafc2017374da9ec206b5495433eadd2b1ea078c3895c99e72825e9d3"
+    },
+    {
+      "name": "libgck-1-0",
+      "version": "3.41.1-1+b1",
+      "url": "https://deb.debian.org/debian/pool/main/g/gcr/libgck-1-0_3.41.1-1+b1_amd64.deb",
+      "sha256": "9743cd1935001b3e30256bc58cafe558aa31f8ce500d29e7687c0d493a19c555"
+    },
+    {
+      "name": "libgcr-base-3-1",
+      "version": "3.41.1-1+b1",
+      "url": "https://deb.debian.org/debian/pool/main/g/gcr/libgcr-base-3-1_3.41.1-1+b1_amd64.deb",
+      "sha256": "04a2b8139976da9150147eaac46c78be3ab0b13d19056b4e7bf50333e4cb10aa"
+    },
+    {
+      "name": "libsecret-1-0",
+      "version": "0.20.5-3",
+      "url": "https://deb.debian.org/debian/pool/main/libs/libsecret/libsecret-1-0_0.20.5-3_amd64.deb",
+      "sha256": "492ec837a8eb5ed2a0205041bc02ba3fb0dc253bfd89aad09a2794c8ce26f778"
+    },
+    {
+      "name": "libcolord2",
+      "version": "1.4.6-2.2",
+      "url": "https://deb.debian.org/debian/pool/main/c/colord/libcolord2_1.4.6-2.2_amd64.deb",
+      "sha256": "6e5a48b72ae316301103d642c8881cc06205cb4b5f54c25c467b2847048d268f"
+    },
+    {
+      "name": "libepoxy0",
+      "version": "1.5.10-1",
+      "url": "https://deb.debian.org/debian/pool/main/libe/libepoxy/libepoxy0_1.5.10-1_amd64.deb",
+      "sha256": "050cbedc9c2a5cce976151c720a3817f2103a01e6ac255bdd6f2c6a7509b04c3"
+    },
+    {
+      "name": "libwayland-client0",
+      "version": "1.21.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-client0_1.21.0-1_amd64.deb",
+      "sha256": "1f002d028b8b79eec9847c636d8886d10dfe8c884cc2bebe18086b1391c5a28d"
+    },
+    {
+      "name": "libwayland-cursor0",
+      "version": "1.21.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-cursor0_1.21.0-1_amd64.deb",
+      "sha256": "0b684467ec795024fcaae99ea4384959cc4052b2da5adec38c9b76dfed9bcf41"
+    },
+    {
+      "name": "libwayland-egl1",
+      "version": "1.21.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/w/wayland/libwayland-egl1_1.21.0-1_amd64.deb",
+      "sha256": "cb4225f0e15e00a3570d4cbc288c87ff477d73e741c3f1c5a6d47cf350d45378"
+    },
+    {
+      "name": "libxcursor1",
+      "version": "1:1.2.1-1",
+      "url": "https://deb.debian.org/debian/pool/main/libx/libxcursor/libxcursor1_1.2.1-1_amd64.deb",
+      "sha256": "49e167048661be4c614fff81429e9eaef38e54ef1d2150a5d2a8c53919217529"
+    },
+    {
+      "name": "libxinerama1",
+      "version": "2:1.1.4-3",
+      "url": "https://deb.debian.org/debian/pool/main/libx/libxinerama/libxinerama1_1.1.4-3_amd64.deb",
+      "sha256": "8dde8f74d2fc001f306fb1295a86850145e93191d35c983c7f52eb21b0a7f8cb"
+    }
+  ]
+}

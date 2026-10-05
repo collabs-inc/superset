@@ -3,7 +3,7 @@ set -eu
 umask 077
 [ "$(uname -s)-$(uname -m)" = Linux-x86_64 ] || { echo 'Superset for Cube requires Linux x64.' >&2; exit 1; }
 script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-for command in node curl tar dpkg-deb sha256sum flock dbus-daemon dbus-send gnome-keyring-daemon; do
+for command in node curl tar dpkg-deb sha256sum flock glib-compile-schemas; do
   command -v "$command" >/dev/null 2>&1 || { echo "Missing $command. Install the packages documented in cube/README.md." >&2; exit 1; }
 done
 json_value() { node -e 'const fs=require("node:fs"); let value=JSON.parse(fs.readFileSync(process.argv[1],"utf8")); for(const key of process.argv[2].split(".")) value=value[key]; console.log(value)' "$script_dir/runtime.json" "$1"; }
@@ -18,6 +18,9 @@ browser_runtime="$cache/browser-$overlay_digest"
 mkdir -p "$cache"
 exec 9>"$cache/.browser-install.lock"
 flock -x 9
+node "$script_dir/system-runtime.mjs" install "$cache"
+private_libraries=$(node "$script_dir/system-runtime.mjs" library-path "$cache")
+export LD_LIBRARY_PATH="$private_libraries${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 if [ -x "$browser_runtime/opt/Superset/superset" ] && [ -f "$browser_runtime/.cube-sha256" ] && [ "$(cat "$browser_runtime/.cube-sha256")" = "$overlay_digest" ]; then
   echo 'Superset browser runtime is already installed.'
   exit 0
