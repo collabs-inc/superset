@@ -2,7 +2,7 @@
   "version": "1.35.0",
   "runtimeSha256": "f94552fe68df301e8d432eb34c576ae8c12eed957f40d18b3d52c38e4c053a05",
   "overlay": {
-    "url": "https://github.com/collabs-inc/superset/releases/download/cube-browser-2026-10-04/superset-browser.tar.gz",
-    "sha256": "0a6ff33d8c689d3227663a6fa64f3747cf2710e4cb3f8ffa086d3497344d9620"
+    "url": "https://github.com/collabs-inc/superset/releases/download/cube-browser-2026-10-05/superset-browser.tar.gz",
+    "sha256": "6c74e641195b814b449eec8905baa591d9f672b66d58e02fe1f8d4718b6be690"
   }
 }
