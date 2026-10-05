@@ -1,7 +1,6 @@
 import crypto from "node:crypto";
 import { AUTH_PROVIDERS } from "@superset/shared/constants";
 import { getHostId, getHostName } from "@superset/shared/host-info";
-import { observable } from "@trpc/server/observable";
 import { shell } from "electron";
 import { env } from "main/env.main";
 import { getHostServiceCoordinator } from "main/lib/host-service-coordinator";
@@ -17,6 +16,7 @@ import {
 	saveToken,
 	stateStore,
 } from "./utils/auth-functions";
+import { tokenEvents } from "./utils/token-events";
 import { writeAuth } from "./utils/write-auth";
 
 export const createAuthRouter = () => {
@@ -57,27 +57,12 @@ export const createAuthRouter = () => {
 		 * - New authentication (OAuth callback) -> { token, expiresAt }
 		 * - Sign out -> null
 		 *
-		 * Does NOT emit on subscribe - use getStoredToken for initial hydration.
+		 * Browser subscriptions also replay current state after a reconnect.
+		 * Desktop IPC uses getStoredToken for initial hydration.
 		 */
-		onTokenChanged: publicProcedure.subscription(() => {
-			return observable<{ token: string; expiresAt: string } | null>((emit) => {
-				const handleSaved = (data: { token: string; expiresAt: string }) => {
-					emit.next(data);
-				};
-
-				const handleCleared = () => {
-					emit.next(null);
-				};
-
-				authEvents.on("token-saved", handleSaved);
-				authEvents.on("token-cleared", handleCleared);
-
-				return () => {
-					authEvents.off("token-saved", handleSaved);
-					authEvents.off("token-cleared", handleCleared);
-				};
-			});
-		}),
+		onTokenChanged: publicProcedure.subscription(() =>
+			tokenEvents(authEvents, loadToken, process.env.CUBE_SUPERSET_WEB === "1"),
+		),
 
 		/**
 		 * Start OAuth sign-in flow.
@@ -109,6 +94,9 @@ export const createAuthRouter = () => {
 							"local_callback",
 							`http://127.0.0.1:${sharedEnv.DESKTOP_NOTIFICATIONS_PORT}/auth/callback`,
 						);
+					}
+					if (process.env.CUBE_SUPERSET_WEB === "1") {
+						return { success: true, url: connectUrl.toString() };
 					}
 					await shell.openExternal(connectUrl.toString());
 					return { success: true };

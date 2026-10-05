@@ -1,6 +1,7 @@
 import { useLingui } from "@lingui/react/macro";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@superset/ui/tooltip";
 import { LuMenu } from "react-icons/lu";
+import { isBrowserHost } from "renderer/browser/mode";
 import { electronTrpc } from "renderer/lib/electron-trpc";
 
 /**
@@ -10,6 +11,7 @@ import { electronTrpc } from "renderer/lib/electron-trpc";
 export function AppMenuButton() {
 	const { t } = useLingui();
 	const popup = electronTrpc.window.popupApplicationMenu.useMutation();
+	if (isBrowserHost) return null;
 	return (
 		<Tooltip>
 			<TooltipTrigger asChild>

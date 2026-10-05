@@ -11,6 +11,7 @@ import log from "electron-log/main";
 import { createWindow } from "lib/electron-app/factories/windows/create";
 import { createTrpcContext } from "lib/trpc/context";
 import { createAppRouter } from "lib/trpc/routers";
+import { browserHostEnabled, startBrowserHost } from "main/browser-host";
 import { resolveDevWorkspaceName } from "main/lib/dev-workspace-name";
 import { getIconPath } from "main/lib/dock-icon";
 import { localDb } from "main/lib/local-db";
@@ -147,11 +148,18 @@ let appServicesInitialized = false;
 export function initAppServices(): void {
 	if (appServicesInitialized) return;
 	appServicesInitialized = true;
+	const appRouter = createAppRouter(getWindow);
 	ipcHandler = createIPCHandler({
 		createContext: createTrpcContext,
-		router: createAppRouter(getWindow),
+		router: appRouter,
 		windows: [],
 	});
+	if (browserHostEnabled) {
+		void startBrowserHost(appRouter, getWindow).catch((error) => {
+			console.error("[cube-web] Startup failed", error);
+			app.exit(1);
+		});
+	}
 	createApplicationMenu();
 
 	// File → New Window (Cmd+N): open another window on the same org as the
@@ -201,8 +209,10 @@ function startSharedServices(): void {
 		playSound: playNotificationSound,
 		onNotificationClick: (ids) => {
 			const win = getFocusedOrLastWindow();
-			win?.show();
-			win?.focus();
+			if (!browserHostEnabled) {
+				win?.show();
+				win?.focus();
+			}
 			if (ids.workspaceId && ids.terminalId) {
 				notificationsEmitter.emit(
 					NOTIFICATION_EVENTS.FOCUS_V2_NOTIFICATION_SOURCE,
@@ -547,7 +557,7 @@ export async function createPlatformWindow({
 			if (initialBounds.isMaximized) {
 				window.maximize();
 			}
-			window.show();
+			if (!browserHostEnabled) window.show();
 			initialized = true;
 			hasCompletedFirstLoad = true;
 		}
@@ -561,7 +571,7 @@ export async function createPlatformWindow({
 			console.error(`  Description: ${errorDescription}`);
 			console.error(`  URL: ${validatedURL}`);
 			// Show the window anyway so user can see something is wrong
-			window.show();
+			if (!browserHostEnabled) window.show();
 		},
 	);
 

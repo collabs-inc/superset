@@ -1,4 +1,9 @@
 import type { KeyboardLayoutData } from "main/lib/keyboardLayout";
+import {
+	type BrowserKeyboard,
+	syncBrowserKeyboard,
+} from "renderer/browser/keyboard";
+import { isBrowserHost } from "renderer/browser/mode";
 import { electronTrpcClient } from "renderer/lib/trpc-client";
 import { create } from "zustand";
 
@@ -59,4 +64,11 @@ function startKeyboardLayoutSync(): void {
 	});
 }
 
-startKeyboardLayoutSync();
+if (isBrowserHost) {
+	const cleanup = syncBrowserKeyboard(
+		(navigator as Navigator & { keyboard?: BrowserKeyboard }).keyboard,
+		window,
+		(map) => useKeyboardLayoutStore.setState({ map, layoutId: "" }),
+	);
+	import.meta.hot?.dispose(cleanup);
+} else startKeyboardLayoutSync();

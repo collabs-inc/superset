@@ -14,6 +14,7 @@ import { menuEmitter } from "./menu-events";
 import { confirmAndQuitCompletely } from "./quit-completely";
 
 export function createApplicationMenu() {
+	if (process.env.CUBE_SUPERSET_WEB === "1") return;
 	const reloadAccelerator = "CmdOrCtrl+R";
 	const closeAccelerator = "CmdOrCtrl+Shift+Q";
 	const showHotkeysAccelerator = "CmdOrCtrl+/";

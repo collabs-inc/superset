@@ -1,5 +1,6 @@
 import { SENTRY_IGNORE_ERRORS } from "@superset/shared/sentry";
 import { createSentryEventThrottle } from "@superset/shared/sentry-throttle";
+import { isBrowserHost } from "../browser/mode";
 import { env } from "../env.renderer";
 
 let sentryInitialized = false;
@@ -9,7 +10,7 @@ let sentryInitialized = false;
 const throttleRepeats = createSentryEventThrottle();
 
 export async function initSentry(): Promise<void> {
-	if (sentryInitialized) return;
+	if (sentryInitialized || isBrowserHost) return;
 
 	if (!env.SENTRY_DSN_DESKTOP || env.NODE_ENV !== "production") {
 		return;

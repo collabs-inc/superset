@@ -8,6 +8,7 @@ import {
 	useMemo,
 	useRef,
 } from "react";
+import { localHostUrl } from "renderer/browser/urls";
 import { env } from "renderer/env.renderer";
 import { authClient, useAuthToken } from "renderer/lib/auth-client";
 import { electronTrpc } from "renderer/lib/electron-trpc";
@@ -204,7 +205,7 @@ export function LocalHostServiceProvider({
 	// during the same render, before any effect runs.
 	useEffect(() => {
 		if (!activeConnection?.port) return;
-		reconnectEventBusIfDown(`http://127.0.0.1:${activeConnection.port}`);
+		reconnectEventBusIfDown(localHostUrl(activeConnection.port));
 	}, [activeConnection]);
 
 	const waitForHostReady = useCallback(
@@ -222,7 +223,7 @@ export function LocalHostServiceProvider({
 							organizationId: orgId,
 						});
 					if (connection?.port) {
-						const hostUrl = `http://127.0.0.1:${connection.port}`;
+						const hostUrl = localHostUrl(connection.port);
 						if (connection.secret)
 							setHostServiceSecret(hostUrl, connection.secret);
 						return hostUrl;
@@ -266,7 +267,7 @@ export function LocalHostServiceProvider({
 			};
 		}
 
-		const activeHostUrl = `http://127.0.0.1:${activeConnection.port}`;
+		const activeHostUrl = localHostUrl(activeConnection.port);
 		if (activeConnection.secret) {
 			setHostServiceSecret(activeHostUrl, activeConnection.secret);
 		}

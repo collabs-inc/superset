@@ -8,6 +8,7 @@ import {
 } from "better-auth/client/plugins";
 import { createAuthClient } from "better-auth/react";
 import { useSyncExternalStore } from "react";
+import { isBrowserHost } from "renderer/browser/mode";
 import { env } from "renderer/env.renderer";
 import { decodeJwtExpiresAtMs } from "renderer/lib/jwt-expiry";
 import { electronTrpcClient } from "renderer/lib/trpc-client";
@@ -121,7 +122,9 @@ export async function ensureFreshJwt(): Promise<string | null> {
  * Server has bearer() plugin enabled to accept bearer tokens.
  */
 export const authClient = createAuthClient({
-	baseURL: env.NEXT_PUBLIC_API_URL,
+	baseURL: isBrowserHost
+		? `${env.NEXT_PUBLIC_API_URL}/api/auth`
+		: env.NEXT_PUBLIC_API_URL,
 	plugins: [
 		organizationClient({
 			teams: { enabled: true },

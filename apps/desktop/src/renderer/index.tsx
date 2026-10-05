@@ -1,5 +1,7 @@
+import "./browser/bootstrap";
 import "./globals.css";
 import "./styles/bundled-fonts.css";
+import { isBrowserHost } from "./browser/mode";
 import { initSentry } from "./lib/sentry";
 
 initSentry();
@@ -55,7 +57,7 @@ const handleDeepLink = (path: string) => {
 const ipcRenderer = window.ipcRenderer as typeof window.ipcRenderer | undefined;
 if (ipcRenderer) {
 	ipcRenderer.on("deep-link-navigate", handleDeepLink);
-} else {
+} else if (!isBrowserHost) {
 	reportBootError(
 		"Renderer preload not available (window.ipcRenderer missing)",
 	);

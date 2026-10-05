@@ -177,7 +177,7 @@ app.get("/auth/callback", async (req, res) => {
 	}
 
 	const mainWindow = BrowserWindow.getAllWindows()[0];
-	if (mainWindow) {
+	if (mainWindow && process.env.CUBE_SUPERSET_WEB !== "1") {
 		if (mainWindow.isMinimized()) {
 			mainWindow.restore();
 		}

@@ -1,4 +1,5 @@
 import { toast } from "@superset/ui/sonner";
+import { localHostUrl } from "renderer/browser/urls";
 import type { electronTrpc } from "renderer/lib/electron-trpc";
 import { setHostServiceSecret } from "renderer/lib/host-service-auth";
 import { getHostServiceClientByUrl } from "renderer/lib/host-service-client";
@@ -39,7 +40,7 @@ async function localHostClients(utils: ElectronTrpcUtils) {
 		return null;
 	}
 	return (connections ?? []).map(({ port, secret }) => {
-		const url = `http://127.0.0.1:${port}`;
+		const url = localHostUrl(port);
 		setHostServiceSecret(url, secret);
 		return getHostServiceClientByUrl(url);
 	});

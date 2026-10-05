@@ -4,6 +4,8 @@ import { useParams } from "@tanstack/react-router";
 import { GlobeIcon, SquareDashedMousePointer, XIcon } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { BrowserLinkPane } from "renderer/browser/BrowserLinkPane";
+import { isBrowserHost } from "renderer/browser/mode";
 import { ImportHistoryDialog } from "renderer/components/ImportHistoryDialog";
 import { electronTrpcClient } from "renderer/lib/trpc-client";
 import {
@@ -11,7 +13,6 @@ import {
 	useBrowserImportBannerDismissalsStore,
 } from "renderer/stores/browser-import-banner-dismissals";
 import type { BrowserPaneData, PaneViewerData } from "../../../../types";
-
 import { BrowserErrorOverlay } from "./components/BrowserErrorOverlay";
 import { BrowserFindBar } from "./components/BrowserFindBar";
 import { BrowserTabFavicon } from "./components/BrowserTabFavicon";
@@ -67,7 +68,17 @@ interface BrowserPaneProps {
 	onFocusAgentTerminal?: (terminalId: string) => void;
 }
 
-export function BrowserPane({
+export function BrowserPane(props: BrowserPaneProps) {
+	return isBrowserHost ? (
+		<BrowserLinkPane
+			initialUrl={(props.ctx.pane.data as BrowserPaneData).url ?? "about:blank"}
+		/>
+	) : (
+		<NativeBrowserPane {...props} />
+	);
+}
+
+function NativeBrowserPane({
 	ctx,
 	onCreateNewAgentSession,
 	onFocusAgentTerminal,

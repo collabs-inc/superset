@@ -12,6 +12,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { isBrowserHost } from "renderer/browser/mode";
 import { Redirect } from "renderer/components/Redirect";
 import { env } from "renderer/env.renderer";
 import { useDelayElapsed } from "renderer/hooks/useDelayElapsed";
@@ -46,6 +47,7 @@ function SignInPage() {
 	const navigate = useNavigate();
 	const [isLoadingDev, setIsLoadingDev] = useState(false);
 	const [devError, setDevError] = useState<string | null>(null);
+	const [browserSignInUrl, setBrowserSignInUrl] = useState<string | null>(null);
 	const [lastUsedMethod, setLastUsedMethod] = useState(readLastUsedMethod);
 	const { hasLocalToken, isPending, session } = useSessionRecovery();
 	// A session fetch that never settles must not trap the user on a spinner —
@@ -82,7 +84,22 @@ function SignInPage() {
 	const signIn = (provider: AuthProvider) => {
 		track("auth_started", { provider });
 		rememberLastUsedMethod(provider);
-		signInMutation.mutate({ provider });
+		const popup = isBrowserHost ? window.open("about:blank", "_blank") : null;
+		if (popup) popup.opener = null;
+		signInMutation.mutate(
+			{ provider },
+			{
+				onSuccess(result) {
+					if ("url" in result && result.url) {
+						setBrowserSignInUrl(result.url);
+						if (popup && !popup.closed) popup.location.href = result.url;
+					}
+				},
+				onError() {
+					popup?.close();
+				},
+			},
+		);
 	};
 
 	const signInAsDev = async () => {
@@ -177,6 +194,21 @@ function SignInPage() {
 					</div>
 
 					<div className="flex flex-col gap-3 w-full max-w-xs">
+						{browserSignInUrl && (
+							<a
+								href={browserSignInUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-sm underline text-center"
+							>
+								<Trans>Continue sign-in in your browser</Trans>
+							</a>
+						)}
+						{isBrowserHost && signInMutation.error && (
+							<p role="alert" className="text-sm text-destructive">
+								{signInMutation.error.message}
+							</p>
+						)}
 						{env.NODE_ENV === "development" && (
 							<Button
 								variant="outline"

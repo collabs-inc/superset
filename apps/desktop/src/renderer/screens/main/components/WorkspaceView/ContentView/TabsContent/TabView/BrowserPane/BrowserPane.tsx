@@ -3,6 +3,8 @@ import { GlobeIcon } from "lucide-react";
 import { useCallback } from "react";
 import { TbDeviceDesktop } from "react-icons/tb";
 import type { MosaicBranch } from "react-mosaic-component";
+import { BrowserLinkPane } from "renderer/browser/BrowserLinkPane";
+import { isBrowserHost } from "renderer/browser/mode";
 import { electronTrpc } from "renderer/lib/electron-trpc";
 import { useTabsStore } from "renderer/stores/tabs/store";
 import { BasePaneWindow, PaneToolbarActions } from "../components";
@@ -26,7 +28,39 @@ interface BrowserPaneProps {
 	setFocusedPane: (tabId: string, paneId: string) => void;
 }
 
-export function BrowserPane({
+export function BrowserPane(props: BrowserPaneProps) {
+	return isBrowserHost ? (
+		<CloudBrowserPane {...props} />
+	) : (
+		<NativeBrowserPane {...props} />
+	);
+}
+
+function CloudBrowserPane(props: BrowserPaneProps) {
+	const url = useTabsStore(
+		(state) =>
+			state.panes[props.paneId]?.browser?.currentUrl ?? DEFAULT_BROWSER_URL,
+	);
+	return (
+		<BasePaneWindow
+			{...props}
+			renderToolbar={(handlers) => (
+				<div className="flex w-full items-center justify-between px-2">
+					<GlobeIcon className="size-4" />
+					<PaneToolbarActions
+						splitOrientation={handlers.splitOrientation}
+						onSplitPane={handlers.onSplitPane}
+						onClosePane={handlers.onClosePane}
+					/>
+				</div>
+			)}
+		>
+			<BrowserLinkPane initialUrl={url} />
+		</BasePaneWindow>
+	);
+}
+
+function NativeBrowserPane({
 	paneId,
 	path,
 	tabId,

@@ -1,6 +1,7 @@
 import type { AppRouter } from "@superset/host-service";
 import { createHostServiceLinks } from "@superset/workspace-client";
 import { createTRPCClient } from "@trpc/client";
+import { localHostUrl } from "../browser/urls";
 import { getHostServiceHeaders } from "./host-service-auth";
 import { isHostServiceConnectionError } from "./utils/isHostServiceConnectionError";
 
@@ -14,7 +15,7 @@ const clientCache = new Map<
 export type HostServiceClient = ReturnType<typeof createTRPCClient<AppRouter>>;
 
 export function getHostServiceClient(port: number): HostServiceClient {
-	return getHostServiceClientByUrl(`http://127.0.0.1:${port}`);
+	return getHostServiceClientByUrl(localHostUrl(port));
 }
 
 export function getHostServiceClientByUrl(hostUrl: string): HostServiceClient {

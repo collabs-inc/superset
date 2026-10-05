@@ -107,13 +107,13 @@ if (IS_DEV) {
 }
 
 // Dev mode: register with execPath + app script so macOS launches Electron with our entry point
-if (process.defaultApp) {
+if (process.env.CUBE_SUPERSET_WEB !== "1" && process.defaultApp) {
 	if (process.argv.length >= 2) {
 		app.setAsDefaultProtocolClient(PROTOCOL_SCHEME, process.execPath, [
 			path.resolve(process.argv[1]),
 		]);
 	}
-} else {
+} else if (process.env.CUBE_SUPERSET_WEB !== "1") {
 	app.setAsDefaultProtocolClient(PROTOCOL_SCHEME);
 }
 
@@ -176,6 +176,7 @@ function findDeepLinkInArgv(argv: string[]): string | undefined {
 }
 
 export function focusMainWindow(): void {
+	if (process.env.CUBE_SUPERSET_WEB === "1") return;
 	const target = getFocusedOrLastWindow();
 	if (target) {
 		if (target.isMinimized()) {
@@ -291,7 +292,12 @@ app.on("before-quit", async (event) => {
 	if (isQuitting) return;
 
 	const isDev = process.env.NODE_ENV === "development";
-	if (!skipQuitConfirmation && !isDev && getConfirmOnQuitSetting()) {
+	if (
+		process.env.CUBE_SUPERSET_WEB !== "1" &&
+		!skipQuitConfirmation &&
+		!isDev &&
+		getConfirmOnQuitSetting()
+	) {
 		event.preventDefault();
 		if (quitConfirmationOpen) return;
 		quitConfirmationOpen = true;
@@ -616,8 +622,10 @@ if (!gotTheLock) {
 			() => createPlatformWindow({ orgId: null }),
 			restoreWindows,
 		);
-		setupAutoUpdater();
-		initTray();
+		if (process.env.CUBE_SUPERSET_WEB !== "1") {
+			setupAutoUpdater();
+			initTray();
+		}
 		startResourceJournal();
 
 		const coldStartUrl = findDeepLinkInArgv(process.argv);

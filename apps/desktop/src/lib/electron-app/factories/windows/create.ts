@@ -15,11 +15,14 @@ export function createWindow({ id, ...settings }: WindowProps) {
 		return { action: "deny" };
 	});
 
-	registerRoute({
-		id,
-		browserWindow: window,
-		htmlFile: join(__dirname, "../renderer/index.html"),
-	});
+	if (process.env.CUBE_SUPERSET_WEB === "1") {
+		void window.loadURL("about:blank");
+	} else
+		registerRoute({
+			id,
+			browserWindow: window,
+			htmlFile: join(__dirname, "../renderer/index.html"),
+		});
 
 	window.on("closed", window.destroy);
 
