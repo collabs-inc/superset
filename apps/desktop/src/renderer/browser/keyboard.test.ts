@@ -15,12 +15,13 @@ test("supports Chromium keyboard objects without EventTarget methods", async () 
 });
 
 test("reads the client keyboard on focus and stops applying updates after cleanup", async () => {
-	const keyboard = new EventTarget() as BrowserKeyboard;
 	let resolve: (map: ReadonlyMap<string, string>) => void = () => {};
-	keyboard.getLayoutMap = () =>
-		new Promise((done) => {
-			resolve = done;
-		});
+	const keyboard: BrowserKeyboard = {
+		getLayoutMap: () =>
+			new Promise((done) => {
+				resolve = done;
+			}),
+	};
 	const focus = new EventTarget();
 	let value = "";
 	const stop = syncBrowserKeyboard(keyboard, focus, (map) => {
