@@ -1,4 +1,4 @@
-export interface BrowserKeyboard extends EventTarget {
+export interface BrowserKeyboard {
 	getLayoutMap(): Promise<ReadonlyMap<string, string>>;
 }
 
@@ -19,11 +19,9 @@ export function syncBrowserKeyboard(
 		}
 	};
 	void refresh();
-	keyboard?.addEventListener("layoutchange", refresh);
 	focusTarget.addEventListener("focus", refresh);
 	return () => {
 		stopped = true;
-		keyboard?.removeEventListener("layoutchange", refresh);
 		focusTarget.removeEventListener("focus", refresh);
 	};
 }
