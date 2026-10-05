@@ -67,6 +67,13 @@ an existing keyring without this managed password file, set
 `CUBE_SUPERSET_KEYRING_PASSWORD_FILE` to a private file containing its existing
 password. The launcher cannot show a native unlock prompt in the browser.
 
+Superset's own saved sign-in uses a separate machine-derived encryption key.
+Browser mode preserves that identity in `native/machine-id` with mode 0600 so a
+cloud reboot cannot change it. Back up this file with `native/auth-token.enc`.
+An older installation whose system machine ID was already lost cannot decrypt
+its previous sign-in; the application preserves that encrypted file in a
+`auth-token.enc.corrupt-*` quarantine and requires normal sign-in again.
+
 To build a release overlay after compiling `apps/desktop/dist`:
 
 ```sh

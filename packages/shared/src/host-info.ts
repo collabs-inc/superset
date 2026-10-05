@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { createHmac } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { homedir, hostname, platform } from "node:os";
+import { getPersistentMachineId } from "./persistent-machine-id";
 
 // Salt value preserved verbatim across the rename to keep existing host ids
 // stable for users already registered against the cloud.
@@ -54,7 +55,10 @@ let cachedMachineId: string | null = null;
  */
 export function getMachineId(): string {
 	if (!cachedMachineId) {
-		cachedMachineId = getRawMachineId();
+		cachedMachineId =
+			process.env.CUBE_SUPERSET_WEB === "1" && process.env.SUPERSET_HOME_DIR
+				? getPersistentMachineId(process.env.SUPERSET_HOME_DIR, getRawMachineId)
+				: getRawMachineId();
 	}
 	return cachedMachineId;
 }
