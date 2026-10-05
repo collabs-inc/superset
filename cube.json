@@ -1,6 +1,6 @@
 {
   "name": "Superset",
-  "description": "The Superset desktop IDE on your cloud computer: parallel coding agents, worktrees, terminals and review in an embedded desktop view.",
+  "description": "Superset in your browser: parallel coding agents, worktrees, terminals and code review on your cloud computer.",
   "icon": "packages/ui/src/assets/icons/preset-icons/superset.svg",
   "platforms": ["linux"],
   "install": "sh cube/install.sh",
