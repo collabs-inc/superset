@@ -4264,6 +4264,9 @@ msgstr "続行"
 msgid "Continue or fork session"
 msgstr "セッションを続行またはフォーク"
 
+msgid "Continue sign-in in your browser"
+msgstr "ブラウザでサインインを続ける"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "同じワークスペースを iPhone から続ける"
 
@@ -4613,6 +4616,9 @@ msgstr "レビュー可能にできませんでした"
 
 msgid "Could not open billing. Please try again."
 msgstr "請求ページを開けませんでした。もう一度お試しください。"
+
+msgid "Could not open directory"
+msgstr "ディレクトリを開けませんでした"
 
 msgid "Could not open Files"
 msgstr "「ファイル」を開けませんでした"
@@ -5702,6 +5708,12 @@ msgstr "訪問者を送ってくれたディレクトリ、ブログ、ニュー
 
 msgid "Directory"
 msgstr "ディレクトリ"
+
+msgid "Directory not found"
+msgstr "ディレクトリが見つかりません"
+
+msgid "Directory path"
+msgstr "ディレクトリのパス"
 
 msgid "Disable"
 msgstr "無効にする"
@@ -11305,6 +11317,9 @@ msgstr "タスクをワークスペースで開く"
 
 msgid "Open this run's workspace"
 msgstr "この実行のワークスペースを開く"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Cube で Superset を使用しながら、ブラウザでウェブサイトを開きます。"
 
 msgid "Open workspace"
 msgstr "ワークスペースを開く"
@@ -17068,6 +17083,9 @@ msgstr "未ステージ"
 msgid "Unsupported item \"{0}\""
 msgstr "未対応のアイテム「{0}」"
 
+msgid "Unsupported URL"
+msgstr "サポートされていない URL"
+
 msgid "Untitled"
 msgstr "無題"
 
@@ -17131,6 +17149,9 @@ msgstr "アップデートの準備ができました"
 
 msgid "Update Required"
 msgstr "アップデートが必要です"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Cube の「アプリを管理」メニューから Superset を更新してください。"
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "そのデバイスで Superset を更新してください。アプリ内からの更新には、対応するスタンドアロンインストールとリリース済みのアプリバージョンが必要です。"
@@ -17253,6 +17274,9 @@ msgstr "モバイルでSupersetを使う"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Pro でスマートフォンから Superset を使えます。"
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "クラウドマシン上のファイルを開くには、Superset のファイルエクスプローラーを使用してください。"
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "デスクトップアプリで並列コーディングエージェントの実行を始めましょう。"
@@ -17591,6 +17615,9 @@ msgstr "Webhookトリガー"
 
 msgid "Website"
 msgstr "ウェブサイト"
+
+msgid "Website URL"
+msgstr "ウェブサイトの URL"
 
 msgid "Week"
 msgstr "週"

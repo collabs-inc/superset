@@ -4264,6 +4264,9 @@ msgstr "Продолжить"
 msgid "Continue or fork session"
 msgstr "Продолжить или форкнуть сессию"
 
+msgid "Continue sign-in in your browser"
+msgstr "Продолжите вход в браузере"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Продолжайте работу в той же рабочей области с iPhone"
 
@@ -4613,6 +4616,9 @@ msgstr "Не удалось отметить готовым"
 
 msgid "Could not open billing. Please try again."
 msgstr "Не удалось открыть страницу оплаты. Попробуйте ещё раз."
+
+msgid "Could not open directory"
+msgstr "Не удалось открыть папку"
 
 msgid "Could not open Files"
 msgstr "Не удалось открыть «Файлы»"
@@ -5702,6 +5708,12 @@ msgstr "Каталоги, блоги, рассылки и сообщества, 
 
 msgid "Directory"
 msgstr "Папка"
+
+msgid "Directory not found"
+msgstr "Папка не найдена"
+
+msgid "Directory path"
+msgstr "Путь к папке"
 
 msgid "Disable"
 msgstr "Отключить"
@@ -11305,6 +11317,9 @@ msgstr "открыть задачу в рабочей области"
 
 msgid "Open this run's workspace"
 msgstr "Открыть рабочую область этого запуска"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Открывайте сайты в браузере во время работы с Superset в Cube."
 
 msgid "Open workspace"
 msgstr "Открыть рабочую область"
@@ -17068,6 +17083,9 @@ msgstr "Не проиндексировано"
 msgid "Unsupported item \"{0}\""
 msgstr "Неподдерживаемый элемент «{0}»"
 
+msgid "Unsupported URL"
+msgstr "Неподдерживаемый URL"
+
 msgid "Untitled"
 msgstr "Без названия"
 
@@ -17131,6 +17149,9 @@ msgstr "Обновление готово"
 
 msgid "Update Required"
 msgstr "Требуется обновление"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Обновите Superset через меню «Управление приложением» в Cube."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Обновите Superset на этом устройстве. Для обновления из приложения нужны поддерживаемая автономная установка и выпущенная версия приложения."
@@ -17253,6 +17274,9 @@ msgstr "Используйте Superset на телефоне"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Используйте Superset на телефоне с Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Используйте проводник файлов Superset, чтобы открывать файлы на облачной машине."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Используйте десктопное приложение, чтобы запускать параллельных кодовых агентов."
@@ -17591,6 +17615,9 @@ msgstr "Сработал webhook"
 
 msgid "Website"
 msgstr "Сайт"
+
+msgid "Website URL"
+msgstr "URL сайта"
 
 msgid "Week"
 msgstr "Неделя"

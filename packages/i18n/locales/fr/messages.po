@@ -4264,6 +4264,9 @@ msgstr "Continuer"
 msgid "Continue or fork session"
 msgstr "Continuer ou forker la session"
 
+msgid "Continue sign-in in your browser"
+msgstr "Poursuivez la connexion dans votre navigateur"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Reprenez le même espace de travail depuis votre iPhone"
 
@@ -4613,6 +4616,9 @@ msgstr "Impossible de marquer comme prête"
 
 msgid "Could not open billing. Please try again."
 msgstr "Impossible d'ouvrir la facturation. Veuillez réessayer."
+
+msgid "Could not open directory"
+msgstr "Impossible d’ouvrir le répertoire"
 
 msgid "Could not open Files"
 msgstr "Impossible d'ouvrir Fichiers"
@@ -5702,6 +5708,12 @@ msgstr "Annuaires, blogs, newsletters et communautés ayant envoyé des visiteur
 
 msgid "Directory"
 msgstr "Répertoire"
+
+msgid "Directory not found"
+msgstr "Répertoire introuvable"
+
+msgid "Directory path"
+msgstr "Chemin du répertoire"
 
 msgid "Disable"
 msgstr "Désactiver"
@@ -11305,6 +11317,9 @@ msgstr "ouvrir la tâche dans un espace de travail"
 
 msgid "Open this run's workspace"
 msgstr "Ouvrir l'espace de travail de cette exécution"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Ouvrez des sites web dans votre navigateur lorsque vous utilisez Superset dans Cube."
 
 msgid "Open workspace"
 msgstr "Ouvrir l'espace de travail"
@@ -17068,6 +17083,9 @@ msgstr "Non indexés"
 msgid "Unsupported item \"{0}\""
 msgstr "Élément non pris en charge « {0} »"
 
+msgid "Unsupported URL"
+msgstr "URL non prise en charge"
+
 msgid "Untitled"
 msgstr "Sans titre"
 
@@ -17131,6 +17149,9 @@ msgstr "Mise à jour prête"
 
 msgid "Update Required"
 msgstr "Mise à jour requise"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Mettez à jour Superset depuis le menu Gérer l’application de Cube."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Mettez à jour Superset sur cet appareil. Les mises à jour depuis l’application nécessitent une installation autonome compatible et une version publiée de l’application."
@@ -17253,6 +17274,9 @@ msgstr "Utiliser Superset sur mobile"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Utilisez Superset sur votre téléphone avec Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Utilisez l’explorateur de fichiers de Superset pour ouvrir des fichiers sur la machine cloud."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Utilisez l'application de bureau pour lancer des agents de code en parallèle."
@@ -17591,6 +17615,9 @@ msgstr "Webhook déclenché"
 
 msgid "Website"
 msgstr "Site web"
+
+msgid "Website URL"
+msgstr "URL du site web"
 
 msgid "Week"
 msgstr "Semaine"

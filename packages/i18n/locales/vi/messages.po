@@ -4264,6 +4264,9 @@ msgstr "Tiếp tục"
 msgid "Continue or fork session"
 msgstr "Tiếp tục hoặc fork phiên"
 
+msgid "Continue sign-in in your browser"
+msgstr "Tiếp tục đăng nhập trong trình duyệt"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Tiếp tục cùng một workspace từ iPhone của bạn"
 
@@ -4613,6 +4616,9 @@ msgstr "Không thể đánh dấu sẵn sàng"
 
 msgid "Could not open billing. Please try again."
 msgstr "Không thể mở trang thanh toán. Vui lòng thử lại."
+
+msgid "Could not open directory"
+msgstr "Không thể mở thư mục"
 
 msgid "Could not open Files"
 msgstr "Không thể mở Files"
@@ -5702,6 +5708,12 @@ msgstr "Danh bạ, blog, bản tin và cộng đồng đã gửi khách truy c�
 
 msgid "Directory"
 msgstr "Thư mục"
+
+msgid "Directory not found"
+msgstr "Không tìm thấy thư mục"
+
+msgid "Directory path"
+msgstr "Đường dẫn thư mục"
 
 msgid "Disable"
 msgstr "Tắt"
@@ -11305,6 +11317,9 @@ msgstr "mở tác vụ trong một workspace"
 
 msgid "Open this run's workspace"
 msgstr "Mở workspace của lần chạy này"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Mở trang web trong trình duyệt khi sử dụng Superset trong Cube."
 
 msgid "Open workspace"
 msgstr "Mở workspace"
@@ -17068,6 +17083,9 @@ msgstr "Chưa stage"
 msgid "Unsupported item \"{0}\""
 msgstr "Mục không được hỗ trợ \"{0}\""
 
+msgid "Unsupported URL"
+msgstr "URL không được hỗ trợ"
+
 msgid "Untitled"
 msgstr "Không tiêu đề"
 
@@ -17131,6 +17149,9 @@ msgstr "Bản cập nhật đã sẵn sàng"
 
 msgid "Update Required"
 msgstr "Cần cập nhật"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Cập nhật Superset từ menu Quản lý ứng dụng của Cube."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Cập nhật Superset trên thiết bị đó. Cập nhật từ ứng dụng yêu cầu bản cài đặt độc lập được hỗ trợ và phiên bản ứng dụng đã phát hành."
@@ -17253,6 +17274,9 @@ msgstr "Dùng Superset trên điện thoại"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Dùng Superset trên điện thoại với Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Sử dụng trình khám phá tệp của Superset để mở tệp trên máy đám mây."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Dùng ứng dụng máy tính để chạy song song nhiều agent lập trình."
@@ -17591,6 +17615,9 @@ msgstr "Webhook được kích hoạt"
 
 msgid "Website"
 msgstr "Website"
+
+msgid "Website URL"
+msgstr "URL trang web"
 
 msgid "Week"
 msgstr "Tuần"

@@ -4264,6 +4264,9 @@ msgstr "Lanjutkan"
 msgid "Continue or fork session"
 msgstr "Lanjutkan atau fork sesi"
 
+msgid "Continue sign-in in your browser"
+msgstr "Lanjutkan proses masuk di browser Anda"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Lanjutkan workspace yang sama dari iPhone Anda"
 
@@ -4613,6 +4616,9 @@ msgstr "Tidak bisa menandai siap"
 
 msgid "Could not open billing. Please try again."
 msgstr "Tidak dapat membuka penagihan. Coba lagi."
+
+msgid "Could not open directory"
+msgstr "Tidak dapat membuka direktori"
 
 msgid "Could not open Files"
 msgstr "Tidak bisa membuka Files"
@@ -5702,6 +5708,12 @@ msgstr "Direktori, blog, buletin, dan komunitas yang mengirim pengunjung. Pencar
 
 msgid "Directory"
 msgstr "Direktori"
+
+msgid "Directory not found"
+msgstr "Direktori tidak ditemukan"
+
+msgid "Directory path"
+msgstr "Jalur direktori"
 
 msgid "Disable"
 msgstr "Nonaktifkan"
@@ -11305,6 +11317,9 @@ msgstr "membuka tugas di workspace"
 
 msgid "Open this run's workspace"
 msgstr "Buka workspace run ini"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Buka situs web di browser Anda saat menggunakan Superset di Cube."
 
 msgid "Open workspace"
 msgstr "Buka workspace"
@@ -17068,6 +17083,9 @@ msgstr "Belum di-stage"
 msgid "Unsupported item \"{0}\""
 msgstr "Item tidak didukung \"{0}\""
 
+msgid "Unsupported URL"
+msgstr "URL tidak didukung"
+
 msgid "Untitled"
 msgstr "Tanpa judul"
 
@@ -17131,6 +17149,9 @@ msgstr "Pembaruan siap"
 
 msgid "Update Required"
 msgstr "Pembaruan Diperlukan"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Perbarui Superset dari menu Kelola aplikasi di Cube."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Perbarui Superset di perangkat tersebut. Pembaruan dari aplikasi memerlukan instalasi mandiri yang didukung dan versi aplikasi yang telah dirilis."
@@ -17253,6 +17274,9 @@ msgstr "Gunakan Superset di ponsel"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Gunakan Superset di ponsel dengan Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Gunakan penjelajah file Superset untuk membuka file di mesin cloud."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Pakai aplikasi desktop untuk mulai menjalankan agen coding paralel."
@@ -17591,6 +17615,9 @@ msgstr "Webhook terpicu"
 
 msgid "Website"
 msgstr "Situs web"
+
+msgid "Website URL"
+msgstr "URL situs web"
 
 msgid "Week"
 msgstr "Minggu"

@@ -4264,6 +4264,9 @@ msgstr "Doorgaan"
 msgid "Continue or fork session"
 msgstr "Sessie voortzetten of forken"
 
+msgid "Continue sign-in in your browser"
+msgstr "Ga verder met inloggen in je browser"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Ga verder in dezelfde werkruimte vanaf je iPhone"
 
@@ -4613,6 +4616,9 @@ msgstr "Kan niet als klaar markeren"
 
 msgid "Could not open billing. Please try again."
 msgstr "Kon facturering niet openen. Probeer het opnieuw."
+
+msgid "Could not open directory"
+msgstr "Kan de map niet openen"
 
 msgid "Could not open Files"
 msgstr "Kan Bestanden niet openen"
@@ -5702,6 +5708,12 @@ msgstr "Directories, blogs, nieuwsbrieven en communities die bezoekers stuurden.
 
 msgid "Directory"
 msgstr "Map"
+
+msgid "Directory not found"
+msgstr "Map niet gevonden"
+
+msgid "Directory path"
+msgstr "Mappad"
 
 msgid "Disable"
 msgstr "Uitschakelen"
@@ -11305,6 +11317,9 @@ msgstr "de taak in een werkruimte openen"
 
 msgid "Open this run's workspace"
 msgstr "Werkruimte van deze run openen"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Open websites in je browser terwijl je Superset in Cube gebruikt."
 
 msgid "Open workspace"
 msgstr "Werkruimte openen"
@@ -17068,6 +17083,9 @@ msgstr "Niet gestaged"
 msgid "Unsupported item \"{0}\""
 msgstr "Niet-ondersteund item \"{0}\""
 
+msgid "Unsupported URL"
+msgstr "Niet-ondersteunde URL"
+
 msgid "Untitled"
 msgstr "Naamloos"
 
@@ -17131,6 +17149,9 @@ msgstr "Update gereed"
 
 msgid "Update Required"
 msgstr "Update vereist"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Werk Superset bij via het menu App beheren in Cube."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Werk Superset bij op dat apparaat. Updates vanuit de app vereisen een ondersteunde zelfstandige installatie en een uitgebrachte appversie."
@@ -17253,6 +17274,9 @@ msgstr "Gebruik Superset op je mobiel"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Gebruik Superset op je telefoon met Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Gebruik de bestandsverkenner van Superset om bestanden op de cloudmachine te openen."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Gebruik de desktop-app om parallelle coding agents te draaien."
@@ -17591,6 +17615,9 @@ msgstr "Webhook getriggerd"
 
 msgid "Website"
 msgstr "Website"
+
+msgid "Website URL"
+msgstr "Website-URL"
 
 msgid "Week"
 msgstr "Week"

@@ -4264,6 +4264,9 @@ msgstr "Continue"
 msgid "Continue or fork session"
 msgstr "Continue or fork session"
 
+msgid "Continue sign-in in your browser"
+msgstr "Continue sign-in in your browser"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "Continue the same workspace from your iPhone"
 
@@ -4613,6 +4616,9 @@ msgstr "Could not mark ready"
 
 msgid "Could not open billing. Please try again."
 msgstr "Could not open billing. Please try again."
+
+msgid "Could not open directory"
+msgstr "Could not open directory"
 
 msgid "Could not open Files"
 msgstr "Could not open Files"
@@ -5702,6 +5708,12 @@ msgstr "Directories, blogs, newsletters, and communities that sent visitors. Sea
 
 msgid "Directory"
 msgstr "Directory"
+
+msgid "Directory not found"
+msgstr "Directory not found"
+
+msgid "Directory path"
+msgstr "Directory path"
 
 msgid "Disable"
 msgstr "Disable"
@@ -11305,6 +11317,9 @@ msgstr "open the task in a workspace"
 
 msgid "Open this run's workspace"
 msgstr "Open this run's workspace"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Open websites in your browser while using Superset in Cube."
 
 msgid "Open workspace"
 msgstr "Open workspace"
@@ -17068,6 +17083,9 @@ msgstr "Unstaged"
 msgid "Unsupported item \"{0}\""
 msgstr "Unsupported item \"{0}\""
 
+msgid "Unsupported URL"
+msgstr "Unsupported URL"
+
 msgid "Untitled"
 msgstr "Untitled"
 
@@ -17131,6 +17149,9 @@ msgstr "Update ready"
 
 msgid "Update Required"
 msgstr "Update Required"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Update Superset from Cube's Manage app menu."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
@@ -17253,6 +17274,9 @@ msgstr "Use Superset on mobile"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Use Superset on your phone with Pro."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "Use Superset's file explorer to open files on the cloud machine."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Use the desktop app to start running parallel coding agents."
@@ -17591,6 +17615,9 @@ msgstr "Webhook triggered"
 
 msgid "Website"
 msgstr "Website"
+
+msgid "Website URL"
+msgstr "Website URL"
 
 msgid "Week"
 msgstr "Week"

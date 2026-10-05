@@ -4264,6 +4264,9 @@ msgstr "继续"
 msgid "Continue or fork session"
 msgstr "继续或分叉会话"
 
+msgid "Continue sign-in in your browser"
+msgstr "在浏览器中继续登录"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "在 iPhone 上继续同一个工作区"
 
@@ -4613,6 +4616,9 @@ msgstr "无法标记为待审查"
 
 msgid "Could not open billing. Please try again."
 msgstr "无法打开账单，请重试。"
+
+msgid "Could not open directory"
+msgstr "无法打开目录"
 
 msgid "Could not open Files"
 msgstr "无法打开“文件”"
@@ -5702,6 +5708,12 @@ msgstr "带来访客的目录站、博客、newsletter 和社区。排除搜索�
 
 msgid "Directory"
 msgstr "目录"
+
+msgid "Directory not found"
+msgstr "未找到目录"
+
+msgid "Directory path"
+msgstr "目录路径"
 
 msgid "Disable"
 msgstr "停用"
@@ -11305,6 +11317,9 @@ msgstr "在工作区中打开任务"
 
 msgid "Open this run's workspace"
 msgstr "打开此次运行的工作区"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "在 Cube 中使用 Superset 时，在浏览器中打开网站。"
 
 msgid "Open workspace"
 msgstr "打开工作区"
@@ -17068,6 +17083,9 @@ msgstr "未暂存"
 msgid "Unsupported item \"{0}\""
 msgstr "不支持的项目“{0}”"
 
+msgid "Unsupported URL"
+msgstr "不支持的 URL"
+
 msgid "Untitled"
 msgstr "未命名"
 
@@ -17131,6 +17149,9 @@ msgstr "更新已就绪"
 
 msgid "Update Required"
 msgstr "需要更新"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "从 Cube 的“管理应用”菜单更新 Superset。"
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "请在该设备上更新 Superset。应用内更新需要受支持的独立安装和已发布的应用版本。"
@@ -17253,6 +17274,9 @@ msgstr "在手机上使用 Superset"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "通过 Pro 在手机上使用 Superset。"
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "使用 Superset 的文件资源管理器打开云端机器上的文件。"
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "使用桌面应用开始并行运行编码智能体。"
@@ -17591,6 +17615,9 @@ msgstr "Webhook触发"
 
 msgid "Website"
 msgstr "官网"
+
+msgid "Website URL"
+msgstr "网站 URL"
 
 msgid "Week"
 msgstr "按周"

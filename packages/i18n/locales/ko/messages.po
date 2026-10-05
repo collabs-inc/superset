@@ -4264,6 +4264,9 @@ msgstr "계속"
 msgid "Continue or fork session"
 msgstr "세션 계속하기 또는 포크"
 
+msgid "Continue sign-in in your browser"
+msgstr "브라우저에서 로그인 계속하기"
+
 msgid "Continue the same workspace from your iPhone"
 msgstr "같은 워크스페이스를 iPhone에서 이어서 작업"
 
@@ -4613,6 +4616,9 @@ msgstr "준비됨으로 표시할 수 없습니다"
 
 msgid "Could not open billing. Please try again."
 msgstr "결제 페이지를 열 수 없습니다. 다시 시도해 주세요."
+
+msgid "Could not open directory"
+msgstr "디렉터리를 열 수 없습니다"
 
 msgid "Could not open Files"
 msgstr "파일 앱을 열지 못했습니다"
@@ -5702,6 +5708,12 @@ msgstr "방문자를 보내준 디렉터리, 블로그, 뉴스레터, 커뮤니�
 
 msgid "Directory"
 msgstr "디렉터리"
+
+msgid "Directory not found"
+msgstr "디렉터리를 찾을 수 없습니다"
+
+msgid "Directory path"
+msgstr "디렉터리 경로"
 
 msgid "Disable"
 msgstr "비활성화"
@@ -11305,6 +11317,9 @@ msgstr "워크스페이스에서 작업을 열"
 
 msgid "Open this run's workspace"
 msgstr "이 실행의 워크스페이스 열기"
+
+msgid "Open websites in your browser while using Superset in Cube."
+msgstr "Cube에서 Superset을 사용하는 동안 브라우저에서 웹사이트를 여세요."
 
 msgid "Open workspace"
 msgstr "워크스페이스 열기"
@@ -17068,6 +17083,9 @@ msgstr "스테이징 안 됨"
 msgid "Unsupported item \"{0}\""
 msgstr "지원하지 않는 항목 \"{0}\""
 
+msgid "Unsupported URL"
+msgstr "지원되지 않는 URL"
+
 msgid "Untitled"
 msgstr "제목 없음"
 
@@ -17131,6 +17149,9 @@ msgstr "업데이트 준비 완료"
 
 msgid "Update Required"
 msgstr "업데이트 필요"
+
+msgid "Update Superset from Cube's Manage app menu."
+msgstr "Cube의 앱 관리 메뉴에서 Superset을 업데이트하세요."
 
 msgid "Update Superset on that device. In-app updates require a supported standalone install and a released app version."
 msgstr "해당 기기에서 Superset을 업데이트하세요. 앱 내 업데이트에는 지원되는 독립 실행형 설치와 정식으로 출시된 앱 버전이 필요합니다."
@@ -17253,6 +17274,9 @@ msgstr "모바일에서 Superset 사용하기"
 
 msgid "Use Superset on your phone with Pro."
 msgstr "Pro로 휴대폰에서 Superset을 사용하세요."
+
+msgid "Use Superset's file explorer to open files on the cloud machine."
+msgstr "클라우드 머신의 파일을 열려면 Superset의 파일 탐색기를 사용하세요."
 
 msgid "Use the desktop app to start running parallel coding agents."
 msgstr "데스크톱 앱에서 병렬 코딩 에이전트를 실행하세요."
@@ -17591,6 +17615,9 @@ msgstr "웹훅 트리거됨"
 
 msgid "Website"
 msgstr "웹사이트"
+
+msgid "Website URL"
+msgstr "웹사이트 URL"
 
 msgid "Week"
 msgstr "주"
