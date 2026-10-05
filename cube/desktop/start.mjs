@@ -118,8 +118,13 @@ export async function runDesktop({ name, executable, args = [], dataDir, env: ov
     await ready(websocketPort, checkFailure);
     ingress = createIngress({ name, clientDir: directory, assetsDir, upstreamPort: websocketPort, onRestore: async () => {
       if (!app?.pid) throw new Error('Application is starting.');
-      const {stdout} = await run('xdotool', ['search', '--pid', String(app.pid)], {env: serviceEnv, timeout:1000});
-      const window = stdout.trim().split('\n').find(value => /^\d+$/.test(value));
+      // Chromium also owns unmapped 10×10 utility windows; use only WM clients.
+      const {stdout} = await run('xprop', ['-root', '_NET_CLIENT_LIST'], {env: serviceEnv, timeout:1000});
+      let window;
+      for (const id of (stdout.match(/0x[0-9a-f]+/gi) || []).slice(0,16)) {
+        const owner = await run('xdotool', ['getwindowpid', id], {env:serviceEnv,timeout:1000}).catch(()=>({stdout:''}));
+        if (Number(owner.stdout.trim()) === app.pid) { window = id; break; }
+      }
       if (!window) throw new Error('Application has no window.');
       await run('xdotool', ['windowmap', window, 'windowactivate', window], {env:serviceEnv,timeout:1000});
     } });
