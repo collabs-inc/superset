@@ -67,6 +67,7 @@ export async function runDesktop({ name, executable, args = [], dataDir, env: ov
   let stopping;
   let ingress;
   let linkServer;
+  let app;
   group.onUnexpectedExit = error => { failure = error; if (ingress?.server.listening) { console.error(error.message); void stop(1); } };
   const checkFailure = () => { if (failure) throw failure; };
   async function stop(code, exit = true) {
@@ -80,9 +81,11 @@ export async function runDesktop({ name, executable, args = [], dataDir, env: ov
     })();
     return stopping;
   }
-  process.once('SIGTERM', () => void stop(0));
-  process.once('SIGINT', () => void stop(0));
-  process.once('SIGHUP', () => void stop(0));
+  // A pty hangup and Cube's kill ladder can deliver the same signal twice.
+  // Keep handlers installed throughout teardown instead of restoring defaults.
+  process.on('SIGTERM', () => void stop(0));
+  process.on('SIGINT', () => void stop(0));
+  process.on('SIGHUP', () => void stop(0));
   try {
     await run('xauth', ['-f', authFile, 'add', ':0', 'MIT-MAGIC-COOKIE-1', cookie]);
     const xvfb = group.spawn('Xvfb', ['-displayfd', '3', '-screen', '0', '1440x900x24', '-nolisten', 'tcp', '-auth', authFile, '+extension', 'RANDR'], { stdio: ['ignore', 'ignore', 'ignore', 'pipe'] });
@@ -113,7 +116,13 @@ export async function runDesktop({ name, executable, args = [], dataDir, env: ov
     await ready(vncPort, checkFailure);
     group.spawn('websockify', [`127.0.0.1:${websocketPort}`, `127.0.0.1:${vncPort}`], { env: serviceEnv });
     await ready(websocketPort, checkFailure);
-    ingress = createIngress({ name, clientDir: directory, assetsDir, upstreamPort: websocketPort });
+    ingress = createIngress({ name, clientDir: directory, assetsDir, upstreamPort: websocketPort, onRestore: async () => {
+      if (!app?.pid) throw new Error('Application is starting.');
+      const {stdout} = await run('xdotool', ['search', '--pid', String(app.pid)], {env: serviceEnv, timeout:1000});
+      const window = stdout.trim().split('\n').find(value => /^\d+$/.test(value));
+      if (!window) throw new Error('Application has no window.');
+      await run('xdotool', ['windowmap', window, 'windowactivate', window], {env:serviceEnv,timeout:1000});
+    } });
     linkServer = http.createServer((request, response) => {
       if (request.method !== 'POST' || request.url !== '/open') { response.writeHead(404); response.end(); return; }
       let body = '';
@@ -130,7 +139,7 @@ export async function runDesktop({ name, executable, args = [], dataDir, env: ov
     const opener = path.join(state, 'bin/xdg-open');
     await writeFile(opener, `#!/bin/sh\nexec ${quote(process.execPath)} ${quote(path.join(directory, 'open-link.mjs'))} "$@"\n`, { mode: 0o700 });
     env.BROWSER = opener;
-    const app = group.spawn(executable, args, { cwd: dataDir, env });
+    app = group.spawn(executable, args, { cwd: dataDir, env });
     await once(app, 'spawn');
     await delay(300);
     checkFailure();

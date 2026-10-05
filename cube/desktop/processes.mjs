@@ -5,6 +5,7 @@ const run = promisify(execFile);
 export class ProcessGroup {
   children = [];
   stopping = false;
+  stopPromise;
   onUnexpectedExit = () => {};
   spawn(command, args = [], options = {}) {
     const child = spawn(command, args, { stdio: 'ignore', ...options, detached: true });
@@ -15,8 +16,12 @@ export class ProcessGroup {
     return child;
   }
   async stop() {
-    if (this.stopping) return;
+    if (this.stopPromise) return this.stopPromise;
     this.stopping = true;
+    this.stopPromise = this.stopOwned();
+    return this.stopPromise;
+  }
+  async stopOwned() {
     const descendants = new Set(this.children.map(({ child }) => child.pid).filter(Boolean));
     try {
       const { stdout } = await run('ps', ['-eo', 'pid=,ppid='], { timeout: 200 });

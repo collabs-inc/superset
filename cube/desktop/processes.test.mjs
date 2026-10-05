@@ -26,12 +26,13 @@ test('SIGHUP cleanup kills a TERM-resistant owned process before Cube escalation
     const group = new ProcessGroup();
     const child = group.spawn(process.execPath, ['-e', 'process.on("SIGTERM",()=>{});console.log("ready");setInterval(()=>{},1000)'], {stdio:['ignore','pipe','ignore']});
     child.stdout.once('data',()=>console.log(child.pid));
-    process.on('SIGHUP',async()=>{await group.stop();process.exit(0)});`;
+    for(const signal of ['SIGHUP','SIGTERM','SIGINT'])process.on(signal,async()=>{await group.stop();process.exit(0)});`;
   const parent = spawn(process.execPath, ['--input-type=module', '-e', script]);
   const [bytes] = await once(parent.stdout, 'data');
   const pid = Number(String(bytes).trim());
   const start = Date.now();
   parent.kill('SIGHUP');
+  setTimeout(() => { parent.kill('SIGHUP'); parent.kill('SIGTERM'); }, 100);
   const [code] = await once(parent, 'exit');
   assert.equal(code, 0);
   assert.ok(Date.now() - start < 1800, 'cleanup must finish within the ptyd grace period');

@@ -18,7 +18,8 @@ test('desktop ingress denies sibling origins and DNS rebinding while allowing Cu
   });
   upstream.listen(0, '127.0.0.1');
   await once(upstream, 'listening');
-  const gate = createIngress({ name: 'Fixture', clientDir: root, assetsDir: root, upstreamPort: upstream.address().port });
+  let restores = 0;
+  const gate = createIngress({ name: 'Fixture', clientDir: root, assetsDir: root, upstreamPort: upstream.address().port, onRestore: async () => { restores++; } });
   gate.server.listen(0, '127.0.0.1');
   await once(gate.server, 'listening');
   const port = gate.server.address().port;
@@ -28,6 +29,13 @@ test('desktop ingress denies sibling origins and DNS rebinding while allowing Cu
     request.on('error', reject);
   });
   try {
+    const restore = origin => new Promise(resolve => {
+      const req = http.request({host:'127.0.0.1',port,path:'/restore',method:'POST',headers:{Host:host,...(origin?{Origin:origin}:{}),'X-Forwarded-Proto':'https'}},res=>{res.resume();resolve(res.statusCode);});req.end();
+    });
+    assert.equal(await restore(undefined),403);
+    assert.equal(await restore('https://other-abcdefgh.cube.site'),403);
+    assert.equal(await restore(`https://${host}`),204);
+    assert.equal(restores,1);
     assert.equal(await get({ Host: host, Origin: `https://${host}`, 'X-Forwarded-Proto': 'https' }), 200);
     assert.equal(await get({ Host: 'evil.example' }), 403);
     assert.equal(await get({ Host: host, Origin: 'https://sibling-abcdefgh.cube.site', 'X-Forwarded-Proto': 'https' }), 403);

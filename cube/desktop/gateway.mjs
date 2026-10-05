@@ -25,14 +25,25 @@ function allowed(req, upgrade = false) {
   return true;
 }
 
-export function createIngress({ name, clientDir, assetsDir, upstreamPort }) {
+export function createIngress({ name, clientDir, assetsDir, upstreamPort, onRestore }) {
   const sockets = new Set();
   const streams = new Set();
   let lastLink;
+  let restoring = false;
   const server = http.createServer(async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Cache-Control', 'no-store');
     if (!allowed(req)) { res.writeHead(403); res.end('Forbidden'); return; }
+    if (req.method === 'POST' && req.url === '/restore') {
+      if (!req.headers.origin) { res.writeHead(403); res.end(); return; }
+      if (!onRestore) { res.writeHead(404); res.end(); return; }
+      if (restoring) { res.writeHead(409); res.end(); return; }
+      restoring = true;
+      try { await onRestore(); res.writeHead(204); }
+      catch { res.writeHead(503); }
+      finally { restoring = false; res.end(); }
+      return;
+    }
     if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405); res.end(); return; }
     const route = new URL(req.url, 'http://localhost').pathname;
     if (route === '/health' || route === '/meta') {
