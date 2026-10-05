@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Desktop app</title>
+<style>
+html,body,#screen{width:100%;height:100%;margin:0;overflow:hidden;background:#11151b;font:14px system-ui;color:#eef1f5}#screen{position:absolute;inset:0}#status{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none}#status:empty{display:none}#tools{position:fixed;right:8px;top:8px;display:flex;gap:6px;opacity:.25}#tools:hover,#tools:focus-within{opacity:1}button,a{font:inherit;color:inherit;background:#262c36;border:1px solid #596171;border-radius:6px;padding:6px 10px;cursor:pointer;text-decoration:none}#link{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:#202630;border:1px solid #647084;padding:12px;border-radius:10px;max-width:90vw;box-shadow:0 6px 24px #0008}#link[hidden]{display:none}#link a{background:#dbe8ff;color:#142847;white-space:nowrap}#destination{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style></head><body><div id="screen"></div><div id="status">Connecting…</div><div id="tools"><button id="paste" title="Paste text into the desktop">Paste</button><button id="reconnect" title="Reconnect desktop">↻</button></div><div id="link" hidden><span id="destination"></span><a id="open" target="_blank" rel="noopener noreferrer">Open link</a><button id="dismiss" aria-label="Dismiss link">×</button></div>
+<script type="module">
+import RFB from '/novnc/core/rfb.js';
+const status=document.querySelector('#status');
+let rfb;
+function connect(){
+  if(rfb)rfb.disconnect();
+  status.textContent='Connecting…';
+  rfb=new RFB(document.querySelector('#screen'),`${location.protocol==='https:'?'wss':'ws'}://${location.host}/websockify`);
+  rfb.scaleViewport=true;rfb.resizeSession=true;rfb.clipViewport=false;rfb.focusOnClick=true;
+  rfb.addEventListener('connect',()=>{status.textContent='';rfb.focus();});
+  rfb.addEventListener('disconnect',()=>{status.textContent='Connection closed. Use ↻ to reconnect.';});
+  rfb.addEventListener('securityfailure',()=>{status.textContent='The desktop connection could not be established.';});
+}
+document.querySelector('#reconnect').onclick=connect;
+document.querySelector('#paste').onclick=async()=>{let text;try{text=await navigator.clipboard.readText();}catch{text=prompt('Paste text to send to the desktop:');}if(text!==null&&text!==undefined){rfb.clipboardPasteFrom(text);rfb.focus();}};
+document.querySelector('#dismiss').onclick=()=>{document.querySelector('#link').hidden=true;rfb.focus();};
+document.querySelector('#open').onclick=()=>{document.querySelector('#link').hidden=true;};
+const events=new EventSource('/events');
+events.onmessage=event=>{try{const value=JSON.parse(event.data);const url=new URL(value.url);if(!['https:','http:'].includes(url.protocol)||url.username||url.password)return;document.querySelector('#destination').textContent=url.host;document.querySelector('#open').href=url.href;document.querySelector('#link').hidden=false;}catch{}};
+fetch('/meta').then(response=>response.json()).then(meta=>{document.title=meta.name;});
+window.addEventListener('beforeunload',()=>{events.close();rfb?.disconnect();});
+connect();
+</script></body></html>
