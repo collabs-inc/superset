@@ -101,13 +101,13 @@ export function createBrowserServer(options: BrowserServerOptions) {
 	});
 
 	function proxyTarget(req: IncomingMessage): string | null {
-		const host = /^\/__cube\/host\/(\d+)(\/.*)$/.exec(req.url ?? "");
+		const host = /^\/__superset\/host\/(\d+)(\/.*)$/.exec(req.url ?? "");
 		if (host && options.hostPorts().includes(Number(host[1]))) {
 			req.url = host[2];
 			return `http://127.0.0.1:${Number(host[1])}`;
 		}
-		if (req.url?.startsWith("/__cube/cloud/")) {
-			req.url = req.url.slice("/__cube/cloud".length);
+		if (req.url?.startsWith("/__superset/cloud/")) {
+			req.url = req.url.slice("/__superset/cloud".length);
 			return options.cloudApiUrl;
 		}
 		return null;
@@ -121,13 +121,13 @@ export function createBrowserServer(options: BrowserServerOptions) {
 			return;
 		}
 		try {
-			if (req.url?.startsWith("/__cube/trpc/")) {
+			if (req.url?.startsWith("/__superset/trpc/")) {
 				await options.onTrpc(req, res);
 				return;
 			}
 			if (
-				req.url?.startsWith("/__cube/host/") ||
-				req.url?.startsWith("/__cube/cloud/")
+				req.url?.startsWith("/__superset/host/") ||
+				req.url?.startsWith("/__superset/cloud/")
 			) {
 				const target = proxyTarget(req);
 				if (!target) {
@@ -141,7 +141,7 @@ export function createBrowserServer(options: BrowserServerOptions) {
 				res.writeHead(405).end();
 				return;
 			}
-			if (req.url === "/__cube/config") {
+			if (req.url === "/__superset/config") {
 				res.setHeader("Content-Type", "application/json");
 				res.end(JSON.stringify(options.metadata));
 				return;
@@ -177,11 +177,11 @@ export function createBrowserServer(options: BrowserServerOptions) {
 			socket.end("HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n");
 			return;
 		}
-		if (req.url === "/__cube/trpc" && options.onTrpcUpgrade) {
+		if (req.url === "/__superset/trpc" && options.onTrpcUpgrade) {
 			options.onTrpcUpgrade(req, socket, head);
 			return;
 		}
-		if (req.url?.startsWith("/__cube/host/")) {
+		if (req.url?.startsWith("/__superset/host/")) {
 			const target = proxyTarget(req);
 			if (target) {
 				proxy.ws(req, socket, head, { target });

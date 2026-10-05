@@ -42,18 +42,18 @@ test("serves real renderer HTML and refuses sibling origins and rebound hosts", 
 	).toBe(403);
 	expect(
 		(
-			await fetch(`${base}/__cube/trpc/settings.get`, {
+			await fetch(`${base}/__superset/trpc/settings.get`, {
 				headers: { origin: "https://other-12345678.cube.site" },
 			})
 		).status,
 	).toBe(403);
 	expect(
-		(await fetch(`${base}/__cube/trpc/settings.set`, { method: "POST" }))
+		(await fetch(`${base}/__superset/trpc/settings.set`, { method: "POST" }))
 			.status,
 	).toBe(403);
 	expect(
 		await (
-			await fetch(`${base}/__cube/trpc/settings.set`, {
+			await fetch(`${base}/__superset/trpc/settings.set`, {
 				method: "POST",
 				headers: { origin: base },
 			})
@@ -80,7 +80,7 @@ test("only forwards live Superset host ports and strips Cube cookies", async () 
 	const port = (upstream.address() as { port: number }).port;
 	const ports: number[] = [];
 	const { base } = await fixture(ports);
-	const target = `${base}/__cube/host/${port}/trpc/terminal.list?batch=1`;
+	const target = `${base}/__superset/host/${port}/trpc/terminal.list?batch=1`;
 	expect((await fetch(target)).status).toBe(403);
 	ports.push(port);
 	const response = await fetch(target, {
@@ -142,7 +142,7 @@ test("host WebSockets require same origin and only reach active host ports", asy
 	);
 	const port = (upstream.address() as { port: number }).port;
 	const { base } = await fixture([port]);
-	const url = `${base.replace("http:", "ws:")}/__cube/host/${port}/terminal?token=host-session`;
+	const url = `${base.replace("http:", "ws:")}/__superset/host/${port}/terminal?token=host-session`;
 	const connect = (origin: string) =>
 		new WebSocket(url, { headers: { origin, cookie: "cube_session=private" } });
 	const denied = connect("https://foreign.example");

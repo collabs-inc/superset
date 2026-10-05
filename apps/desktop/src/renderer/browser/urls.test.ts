@@ -3,13 +3,13 @@ import { browserSocketUrl, localHostUrl } from "./urls";
 
 test("cloud host connections stay on the app origin including HTTPS WebSockets", () => {
 	expect(localHostUrl(41327, "https://superset-12345678.cube.site")).toBe(
-		"https://superset-12345678.cube.site/__cube/host/41327",
+		"https://superset-12345678.cube.site/__superset/host/41327",
 	);
 	expect(browserSocketUrl("https://superset-12345678.cube.site")).toBe(
-		"wss://superset-12345678.cube.site/__cube/trpc",
+		"wss://superset-12345678.cube.site/__superset/trpc",
 	);
 	expect(browserSocketUrl("http://127.0.0.1:3190")).toBe(
-		"ws://127.0.0.1:3190/__cube/trpc",
+		"ws://127.0.0.1:3190/__superset/trpc",
 	);
 });
 

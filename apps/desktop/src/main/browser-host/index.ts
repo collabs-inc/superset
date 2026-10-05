@@ -43,7 +43,7 @@ export async function startBrowserHost(
 				router,
 				createContext,
 				path: new URL(req.url ?? "/", "http://localhost").pathname.slice(
-					"/__cube/trpc/".length,
+					"/__superset/trpc/".length,
 				),
 				maxBodySize: 20 * 1024 * 1024,
 			}),

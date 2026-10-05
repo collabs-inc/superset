@@ -6,11 +6,13 @@ export function localHostUrl(
 ): string {
 	if (!Number.isInteger(port) || port < 1 || port > 65535)
 		throw new Error("Invalid Superset host port");
-	return origin ? `${origin}/__cube/host/${port}` : `http://127.0.0.1:${port}`;
+	return origin
+		? `${origin}/__superset/host/${port}`
+		: `http://127.0.0.1:${port}`;
 }
 
 export function browserSocketUrl(origin: string): string {
-	const url = new URL("/__cube/trpc", origin);
+	const url = new URL("/__superset/trpc", origin);
 	url.protocol = url.protocol === "https:" ? "wss:" : "ws:";
 	return url.href;
 }

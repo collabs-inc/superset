@@ -36,7 +36,7 @@ const rawEnv = {
 	// These are replaced by Vite's define at build time
 	NODE_ENV: process.env.NODE_ENV,
 	NEXT_PUBLIC_API_URL: isBrowserHost
-		? `${window.location.origin}/__cube/cloud`
+		? `${window.location.origin}/__superset/cloud`
 		: process.env.NEXT_PUBLIC_API_URL,
 	NEXT_PUBLIC_WEB_URL: process.env.NEXT_PUBLIC_WEB_URL,
 	NEXT_PUBLIC_MARKETING_URL: process.env.NEXT_PUBLIC_MARKETING_URL,
